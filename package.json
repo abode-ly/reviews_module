@@ -18,9 +18,16 @@
     "url": "https://github.com/abode-ly/reviews_module/issues"
   },
   "homepage": "https://github.com/abode-ly/reviews_module#readme",
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "testEnvironment": "enzyme"
+  },
   "dependencies": {
     "babel": "^6.23.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16.2": "^1.5.2",
     "express": "^4.16.2",
+    "jest-environment-enzyme": "^7.0.2",
     "morgan": "^1.9.0",
     "npm": "^6.9.1-next.0",
     "react": "^16.2.0",
@@ -30,13 +37,15 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.5",
     "eslint": "^5.15.3",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "jest": "^22.4.4",
+    "jest": "^24.5.0",
+    "jest-enzyme": "^7.0.2",
     "nodemon": "^1.18.10",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
