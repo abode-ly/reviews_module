@@ -42,10 +42,12 @@ const generateListings = () => {
       if (err) {
         console.log('failed to save the listing to database ', err);
       } else {
-        console.log('ok');
+        console.log('saved a listing to the database');
       }
     });
   }
 };
+
+generateListings();
 
 module.exports.generateListings = generateListings;
