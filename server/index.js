@@ -1,4 +1,5 @@
 const express = require('express');
+const Review = require('./db.js');
 
 const app = express();
 const port = 3002;
