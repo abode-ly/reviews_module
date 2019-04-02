@@ -9,7 +9,7 @@ module.exports = {
     jest: 'readonly',
   },
   plugins: [
-    'react',
+    'react', 'jest'
   ],
   rules: {
   },

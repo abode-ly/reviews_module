@@ -12,6 +12,3 @@ jobs:
       - run: "npm run start"
       - run: "npm run seed"
       - run: "npm run test"
-
-//need the instructions to tell CircleCI how to get my code booted up and started
-//yml is an alternative to JSON, holds key and value pairs
