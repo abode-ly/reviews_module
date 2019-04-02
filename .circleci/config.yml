@@ -5,4 +5,11 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: "npm install"
+      - run: "npm run build"
+      - run: "npm run start"
+      - run: "npm run seed"
+      - run: "npm run test"
+
+//need the instructions to tell CircleCI how to get my code booted up and started
+//yml is an alternative to JSON, holds key and value pairs
