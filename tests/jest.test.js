@@ -4,7 +4,7 @@ import App from '../client/components/App.jsx'
 
 it('should render App component w/o throwing an error', () => {
   const test = document.createElement('div');
-  ReactDOM.render(<App/>, div);
+  ReactDOM.render(<App />, div);
   console.log('true');
   ReactDOM.unmountComponentAtNode(div);
 });
