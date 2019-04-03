@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      allReviews: [],
       reviews: [],
       avgStars: 0,
     };
@@ -16,13 +17,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(window.location.pathname);
     $.ajax({
-      url: '/abodes/5/reviews',
+      url: '/abodes/2/reviews',
       method: 'GET',
     })
       .done((listingInfo) => {
-        this.setState({ reviews: listingInfo.reviews });
+        this.setState({
+          allReviews: listingInfo.reviews,
+          reviews: listingInfo.reviews,
+        });
       })
       .fail((err) => {
         console.log('Failed to get reviews from database. Error: ', err);
