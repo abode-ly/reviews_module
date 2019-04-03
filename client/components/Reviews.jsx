@@ -1,11 +1,15 @@
 import React from 'react';
+import Review from './Review.jsx';
 
 function Reviews(props) {
+  // console.log(props.reviews)
   return (
     <div>
-      Reviews
+      {props.reviews.map( (review) => {
+        return <Review key={review._id} review={review} />;
+      })}
     </div>
-  )
+  );
 }
 
 export default Reviews;

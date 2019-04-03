@@ -16,6 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log(window.location.pathname);
     $.ajax({
       url: '/abodes/5/reviews',
       method: 'GET',
