@@ -6,8 +6,7 @@ module.exports = {
   },
   extends: 'airbnb',
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    jest: 'readonly',
   },
   parserOptions: {
     ecmaFeatures: {
@@ -17,8 +16,9 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react',
+    'react', 'jest',
   ],
   rules: {
   },
+  parser: "babel-eslint",
 };
