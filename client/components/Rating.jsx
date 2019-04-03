@@ -6,6 +6,6 @@ function Rating(props) {
       {props.type} = {props.value}
     </div>
   );
-};
+}
 
 export default Rating;

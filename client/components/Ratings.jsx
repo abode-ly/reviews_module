@@ -24,7 +24,7 @@ function Ratings(props) {
 
   const totalRatings = accuracy + communication + cleanliness + location + checkIn + value;
   const avgRating = (totalRatings / 6 / numReviews);
-  console.log(avgRating);
+  // this.props.foundAvg(avgRating);
 
   return (
     <div>

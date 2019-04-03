@@ -2,10 +2,10 @@ import React from 'react';
 
 function Search(props) {
   return (
-    <div>
-      Search
-    </div>
-  )
+    <form>
+      <input type='text' placeholder="Search reviews"></input>
+    </form>
+  );
 }
 
 export default Search;
