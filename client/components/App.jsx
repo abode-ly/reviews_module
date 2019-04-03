@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       reviews: [],
-      avgStars: 0
+      avgStars: 0,
     };
     this.foundAvg = this.foundAvg.bind(this);
   }
@@ -18,31 +18,31 @@ class App extends React.Component {
   componentDidMount() {
     $.ajax({
       url: '/abodes/5/reviews',
-      method: 'GET'
+      method: 'GET',
     })
-    .done((listingInfo)=>{
-      this.setState({reviews: listingInfo.reviews});
-    })
-    .fail((err) => {
-      console.log('Failed to get reviews from database. Error: ', err);
-    });
+      .done((listingInfo) => {
+        this.setState({ reviews: listingInfo.reviews });
+      })
+      .fail((err) => {
+        console.log('Failed to get reviews from database. Error: ', err);
+      });
   }
 
   foundAvg(avg) {
     this.setState({
-      avgStars: avg
-    })
+      avgStars: avg,
+    });
   }
 
   render() {
     return (
       <div>
-        <TotalReviews stars={this.state.avgStars} foundAvg={this.foundAvg}/>
+        <TotalReviews stars={this.state.avgStars} foundAvg={this.foundAvg} />
         <Search />
-        <Ratings reviews={this.state.reviews}/>
-        <Reviews reviews={this.state.reviews}/>
+        <Ratings reviews={this.state.reviews} />
+        <Reviews reviews={this.state.reviews} />
       </div>
-    )
+    );
   }
 }
 
