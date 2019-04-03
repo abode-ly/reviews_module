@@ -1,8 +1,6 @@
 const faker = require('faker');
 const { Review } = require('./db.js');
 
-console.log('Version 2');
-
 const reviewText = () => {
   let reviewParagraphs;
   const reviewLength = Math.ceil(Math.random() * 4);
