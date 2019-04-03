@@ -1,9 +1,9 @@
 import React from 'react';
+import $ from 'jquery';
 import TotalReviews from './TotalReviews.jsx';
 import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import Reviews from './Reviews.jsx';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -16,13 +16,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/abodes/5/reviews')
-      .then((response)=>{
-        return response.json()
-      })
-      .then((listingInfo) => {
-        this.setState({ reviews: listingInfo.reviews })
-      });
+    $.ajax({
+      url: '/abodes/5/reviews',
+      method: 'GET'
+    })
+    .done((listingInfo)=>{
+      this.setState({reviews: listingInfo.reviews});
+    })
+    .fail((err) => {
+      console.log('Failed to get reviews from database. Error: ', err);
+    });
   }
 
   foundAvg(avg) {
@@ -44,4 +47,3 @@ class App extends React.Component {
 }
 
 export default App;
-
