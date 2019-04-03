@@ -5,15 +5,30 @@ import Ratings from './Ratings.jsx';
 import Reviews from './Reviews.jsx';
 
 
-const App = function() {
-  return (
-    <div>
-      <TotalReviews />
-      <Search />
-      <Ratings />
-      <Reviews />
-    </div>
-  )
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = null;
+  }
+
+  componentDidMount() {
+    fetch('/abodes/2/reviews')
+      .then((response)=>{
+        return response.json()
+      })
+      .then((data)=>{console.log(JSON.stringify(data))});
+  }
+
+  render() {
+    return (
+      <div>
+        <TotalReviews />
+        <Search />
+        <Ratings />
+        <Reviews />
+      </div>
+    )
+  }
 }
 
 export default App;
