@@ -10,8 +10,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       reviews: [],
-      avgStars: 5
+      avgStars: 0
     };
+    this.foundAvg = this.foundAvg.bind(this);
   }
 
   componentDidMount() {
@@ -24,10 +25,16 @@ class App extends React.Component {
       });
   }
 
+  foundAvg(avg) {
+    this.setState({
+      avgStars: avg
+    })
+  }
+
   render() {
     return (
       <div>
-        <TotalReviews stars={this.state.avgStars}/>
+        <TotalReviews stars={this.state.avgStars} foundAvg={this.foundAvg}/>
         <Search />
         <Ratings reviews={this.state.reviews}/>
         <Reviews reviews={this.state.reviews}/>
