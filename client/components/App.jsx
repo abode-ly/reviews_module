@@ -8,7 +8,10 @@ import Reviews from './Reviews.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = null;
+    this.state = {
+      reviews: [],
+      avgStars: 5
+    };
   }
 
   componentDidMount() {
@@ -16,16 +19,18 @@ class App extends React.Component {
       .then((response)=>{
         return response.json()
       })
-      .then((data)=>{console.log(JSON.stringify(data))});
+      .then((listingInfo) => {
+        this.setState({ reviews: listingInfo.reviews })
+      });
   }
 
   render() {
     return (
       <div>
-        <TotalReviews />
+        <TotalReviews stars={this.state.avgStars}/>
         <Search />
-        <Ratings />
-        <Reviews />
+        <Ratings reviews={this.state.reviews}/>
+        <Reviews reviews={this.state.reviews}/>
       </div>
     )
   }
