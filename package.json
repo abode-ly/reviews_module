@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --watch -d",
+    "build:watch": "webpack --watch -d",
+    "build": "webpack",
     "start": "nodemon ./server/index.js",
     "seed": "node ./server/seed_reviews.js"
   },
@@ -25,8 +26,8 @@
   "jest": {
     "setupTestFrameworkScriptFile": "jest-enzyme",
     "testEnvironment": "enzyme",
-    "setupFilesAfterEnv": [
-      "<rootDir>/tests/enzyme.test.js"
+    "setupFiles": [
+      "<rootDir>/enzyme.config.js"
     ]
   },
   "dependencies": {

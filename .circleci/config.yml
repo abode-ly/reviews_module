@@ -1,9 +1,8 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/tmp
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:8.15.1
       - image: circleci/mongo:4.0.3
     steps:
       - checkout

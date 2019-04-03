@@ -6,10 +6,18 @@ module.exports = {
   },
   extends: 'airbnb',
   globals: {
-    jest: 'readonly',
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
   plugins: [
-    'react', 'jest'
+    'react',
   ],
   rules: {
   },
