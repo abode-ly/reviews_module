@@ -1,9 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import TotalReviews from './TotalReviews';
-import Search from './Search';
-import Ratings from './Ratings';
-import Reviews from './Reviews';
+import Reviews from './Reviews.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +23,7 @@ class App extends React.Component {
         console.log('Failed to retreive data from the server');
       });
   }
-  
+
   render() {
     return (
       <div>
