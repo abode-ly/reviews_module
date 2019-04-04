@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import TotalReviews from './TotalReviews';
-import Search from './Search';
-import Ratings from './Ratings';
+import TotalReviews from './TotalReviews.jsx';
+import Search from './Search.jsx';
+import Ratings from './Ratings.jsx';
 
 class App extends React.Component {
   constructor(props) {

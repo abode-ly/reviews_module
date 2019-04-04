@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Search from './Search';
+import Search from './Search.jsx';
 
 describe('Search', () => {
   it('should render w/o errors', () => {

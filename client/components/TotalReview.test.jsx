@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import TotalReviews from './TotalReviews';
+import TotalReviews from './TotalReviews.jsx';
 
 describe('TotalReviews', () => {
   it('should render w/o errors', () => {

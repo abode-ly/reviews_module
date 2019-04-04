@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import App from './App';
+import App from './App.jsx';
 import { doesNotReject } from 'assert';
 
 describe('App component rendering', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Rating from './Rating';
+import Rating from './Rating.jsx';
 
 describe('Rating', () => {
   it('should render w/o errors', () => {
