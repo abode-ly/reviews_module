@@ -16,4 +16,6 @@ app.get('/abodes/:abode_id/reviews', (req, res) => {
   });
 });
 
+app.use(express.static('public'));
+
 app.listen(port, () => { console.log(`Listening on port ${port}`); });

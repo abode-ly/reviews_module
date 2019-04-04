@@ -5,9 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --watch -d",
+    "build:watch": "webpack --watch -d",
+    "build": "webpack",
     "start": "nodemon ./server/index.js",
     "seed": "node ./server/seed_reviews.js"
+  },
+  "engines": {
+    "node": "^11.12.0"
   },
   "repository": {
     "type": "git",
@@ -19,15 +23,20 @@
     "url": "https://github.com/abode-ly/reviews_module/issues"
   },
   "homepage": "https://github.com/abode-ly/reviews_module#readme",
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "testEnvironment": "enzyme",
+    "setupFiles": [
+      "<rootDir>/enzyme.config.js"
+    ]
+  },
   "dependencies": {
-    "babel": "^6.23.0",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.0",
-    "node": "^11.12.0",
     "npm": "^6.9.1-next.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
@@ -38,12 +47,18 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "eslint": "^5.15.3",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16.2": "^1.5.2",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "jest": "^22.4.4",
+    "faker": "^4.1.0",
+    "jest": "^24.5.0",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-enzyme": "^7.0.2",
     "nodemon": "^1.18.10",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"

@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import $ from 'jquery';
 import TotalReviews from './TotalReviews.jsx';
 import Search from './Search.jsx';
@@ -48,6 +49,15 @@ class App extends React.Component {
       </div>
     );
   }
+=======
+
+const App = function() {
+  return (
+    <div className='test'>
+      Hello World.
+    </div>
+  )
+>>>>>>> 2a6c31673d8b6e0fb578a6dd160995aa7c028254
 }
 
 export default App;

@@ -7,4 +7,8 @@ describe('App component exists', () => {
     const test = shallow(<App />);
     expect(test.find('div').exists()).toBe(true);
   })
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 2a6c31673d8b6e0fb578a6dd160995aa7c028254

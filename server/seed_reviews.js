@@ -31,6 +31,8 @@ const generateReviews = () => {
 };
 
 const generateListings = () => {
+  let abodeCount = 0;
+
   for (let abode = 1; abode < 101; abode++) {
     const listing = new Review({
       abode_id: abode,
@@ -39,10 +41,15 @@ const generateListings = () => {
     });
 
     listing.save((err) => {
+      abodeCount++;
+      console.log("abodeCount:" + abodeCount);
       if (err) {
         console.log('failed to save the listing to database ', err);
       } else {
         console.log('saved a listing to the database');
+        if (abodeCount === 100) {
+          process.exit();
+        }
       }
     });
   }
