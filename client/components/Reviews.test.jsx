@@ -32,7 +32,7 @@ const data = [{
 
 describe('Reviews', () => {
   it('should render w/o errors', () => {
-    const wrapper = shallow(<Reviews reviews={data}/>);
+    const wrapper = shallow(<Reviews reviews={data} />);
     expect(wrapper.find('div').exists()).toBe(true);
   });
 });
