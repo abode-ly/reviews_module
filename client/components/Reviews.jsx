@@ -1,5 +1,5 @@
 import React from 'react';
-import Review from './Review.jsx';
+import Review from './Review';
 
 function Reviews(props) {
   // console.log(props.reviews)

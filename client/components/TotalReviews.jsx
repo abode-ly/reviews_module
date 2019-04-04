@@ -5,7 +5,7 @@ function TotalReviews(props) {
     <div>
       TotalReviews
     </div>
-  )
+  );
 }
 
 export default TotalReviews;

@@ -3,6 +3,7 @@ import Rating from './Rating.jsx';
 
 function Ratings(props) {
   const numReviews = props.reviews.length;
+  console.log('numReviews', numReviews);
   let accuracy = 0;
   let communication = 0;
   let cleanliness = 0;
