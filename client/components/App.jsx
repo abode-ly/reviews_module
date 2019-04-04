@@ -12,7 +12,7 @@ class App extends React.Component {
       allReviews: [],
       reviews: [],
       foundAverage: false,
-      avgRating: null,
+      avgRating: 0,
       ratings: {
         communication: 0,
         value: 0,
@@ -48,9 +48,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TotalReviews stars={this.state.avgStars} calculateAvg={this.calculateAvg} />
-        <Search />
-        <Ratings reviews={this.state.reviews} />
+        <TotalReviews stars={this.state.avgRating} />
+        <Search reviews={this.state.reviews} />
+        <Ratings reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
       </div>
     );
   }
