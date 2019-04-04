@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import TopBar from './TopBar';
-import Reviews from './Reviews';
 
 class App extends React.Component {
   constructor() {
@@ -36,7 +35,6 @@ class App extends React.Component {
     return (
       <div>
         <TopBar reviews={this.state.allReviews} filteredReviews={this.filteredReviews} />
-        <Reviews reviews={this.state.reviews} />
       </div>
     );
   }
