@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Reviews from './Ratings.jsx';
+import Reviews from './Reviews.jsx';
 
 const data = [{
   _id: '5ac45234b',
