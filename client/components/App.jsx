@@ -3,7 +3,6 @@ import axios from 'axios';
 import TotalReviews from './TotalReviews';
 import Search from './Search';
 import Ratings from './Ratings';
-import Reviews from './Reviews';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +41,7 @@ class App extends React.Component {
     this.setState({
       avgRating,
       ratings,
+      foundAverage: true,
     });
   }
 
@@ -50,7 +50,7 @@ class App extends React.Component {
       <div>
         <TotalReviews stars={this.state.avgRating} />
         <Search reviews={this.state.reviews} />
-        <Ratings reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
+        <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
       </div>
     );
   }
