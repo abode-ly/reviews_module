@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import axios from 'axios';
 import TotalReviews from './TotalReviews.jsx';
 import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
@@ -17,18 +17,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/abodes/2/reviews',
-      method: 'GET',
-    })
-      .done((listingInfo) => {
+    axios.get('/abodes/2/reviews')
+      .then((listingInfo) => {
         this.setState({
-          allReviews: listingInfo.reviews,
-          reviews: listingInfo.reviews,
+          allReviews: listingInfo.data.reviews,
+          reviews: listingInfo.data.reviews,
         });
-      })
-      .fail((err) => {
-        console.log('Failed to get reviews from database. Error: ', err);
       });
   }
 
