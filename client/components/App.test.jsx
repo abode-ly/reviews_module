@@ -9,20 +9,20 @@ describe('App component rendering', () => {
     expect(wrapper.find('div').exists()).toBe(true);
   });
 
-  it('should contain a TotalReviews component', () => {
-    let wrapper = shallow(<App />);
-    expect(wrapper.find('TotalReviews').exists()).toBe(true);
-  });
+  // it('should contain a TotalReviews component', () => {
+  //   let wrapper = shallow(<App />);
+  //   expect(wrapper.find('TotalReviews').exists()).toBe(true);
+  // });
 
-  it('should contain a Search component', () => {
-    let wrapper = shallow(<App />);
-    expect(wrapper.find('Search').exists()).toBe(true);
-  });
+  // it('should contain a Search component', () => {
+  //   let wrapper = shallow(<App />);
+  //   expect(wrapper.find('Search').exists()).toBe(true);
+  // });
 
-  it('should contain a Ratings component', () => {
-    let wrapper = shallow(<App />);
-    expect(wrapper.find('Ratings').exists()).toBe(true);
-  });
+  // it('should contain a Ratings component', () => {
+  //   let wrapper = shallow(<App />);
+  //   expect(wrapper.find('Ratings').exists()).toBe(true);
+  // });
 
   it('should contain a Reviews component', () => {
     let wrapper = shallow(<App />);
