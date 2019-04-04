@@ -1,19 +1,16 @@
 import React from 'react';
 import axios from 'axios';
-import TotalReviews from './TotalReviews';
-import Search from './Search';
-import Ratings from './Ratings';
+import TopBar from './TopBar';
 import Reviews from './Reviews';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       allReviews: [],
       reviews: [],
-      avgStars: 0,
     };
-    // this.foundAvg = this.foundAvg.bind(this);
+    this.filteredReviews = this.filteredReviews.bind(this);
   }
 
   componentDidMount() {
@@ -29,18 +26,16 @@ class App extends React.Component {
       });
   }
 
-  // foundAvg(avg) {
-  //   this.setState({
-  //     avgStars: avg,
-  //   });
-  // }
+  filteredReviews(reviews) {
+    this.setState({
+      reviews,
+    });
+  }
 
   render() {
     return (
       <div>
-        <TotalReviews stars={this.state.avgStars} foundAvg={this.foundAvg} />
-        <Search />
-        <Ratings reviews={this.state.reviews} />
+        <TopBar reviews={this.state.allReviews} filteredReviews={this.filteredReviews} />
         <Reviews reviews={this.state.reviews} />
       </div>
     );
