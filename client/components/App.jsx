@@ -15,6 +15,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/abodes/2/reviews')
       .then((listingInfo) => {
+        console.log('have data');
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,

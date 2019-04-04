@@ -18,12 +18,6 @@ class TopBar extends React.Component {
       },
     };
   }
-
-  componentDidMount() {
-    if (this.state.avgRating === 0 && this.props.reviews.length > 0) {
-      this.calcAverages();
-    }
-  }
   
   calcAverages() {
     let accuracy = 0;
@@ -48,7 +42,8 @@ class TopBar extends React.Component {
     console.log('totalRatings', totalRatings);
     const numReviews = this.props.reviews.length;
     const avgRating = (totalRatings / 6 / numReviews);
-
+    
+    console.log('hello');
     this.setState({
       avgRating,
       avgRatings: {
@@ -61,13 +56,22 @@ class TopBar extends React.Component {
       },
     });
   }
+  
+  runCalcAverages() {
+    console.log('in component');
+    console.log(this.props.reviews.length);
+    if (this.state.avgRating === 0 && this.props.reviews.length > 0) {
+      this.calcAverages();
+    }
+  }
 
+  
   render() {
     return (
       <div>
         <TotalReviews />
         <Search reviews={this.props.reviews} filteredReviews={this.props.filteredReviews} />
-        {/* <Ratings /> */}
+        <Ratings accuracy={this.state.accuracy} communication={this.state.communication} location={this.state.location} checkIn={this.state.checkIn} value={this.state.value} cleanliness={this.state.cleanliness} />
       </div>
     );
   }
