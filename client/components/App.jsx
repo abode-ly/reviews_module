@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import TotalReviews from './TotalReviews.jsx';
-import Search from './Search.jsx';
-import Ratings from './Ratings.jsx';
-import Reviews from './Reviews.jsx';
+import TotalReviews from './TotalReviews';
+import Search from './Search';
+import Ratings from './Ratings';
+import Reviews from './Reviews';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class App extends React.Component {
       reviews: [],
       avgStars: 0,
     };
-    this.foundAvg = this.foundAvg.bind(this);
+    // this.foundAvg = this.foundAvg.bind(this);
   }
 
   componentDidMount() {
@@ -23,14 +23,17 @@ class App extends React.Component {
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,
         });
+      })
+      .catch(() => {
+        console.log('Failed to retreive data from the server');
       });
   }
 
-  foundAvg(avg) {
-    this.setState({
-      avgStars: avg,
-    });
-  }
+  // foundAvg(avg) {
+  //   this.setState({
+  //     avgStars: avg,
+  //   });
+  // }
 
   render() {
     return (

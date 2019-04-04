@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1553816206126" clover="3.2.0">
-  <project timestamp="1553816206126" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0">
-    </metrics>
+<coverage generated="1554357896657" clover="3.2.0">
+  <project timestamp="1554357896657" name="All files">
+    <metrics statements="32" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="3" elements="45" coveredelements="8" complexity="0" loc="32" ncloc="32" packages="1" files="7" classes="7"/>
+    <file name="App.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/App.jsx">
+      <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+      <line num="10" count="7" type="stmt"/>
+      <line num="11" count="7" type="stmt"/>
+      <line num="20" count="6" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="41" count="7" type="stmt"/>
+    </file>
+    <file name="Rating.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/Rating.jsx">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="4" count="0" type="stmt"/>
+    </file>
+    <file name="Ratings.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/Ratings.jsx">
+      <metrics statements="17" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+    </file>
+    <file name="Review.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/Review.jsx">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+    </file>
+    <file name="Reviews.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/Reviews.jsx">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+    </file>
+    <file name="Search.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/Search.jsx">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="4" count="0" type="stmt"/>
+    </file>
+    <file name="TotalReviews.jsx" path="/Users/MarissaShieh/Desktop/Hack Reactor/FEC/reviews_module/client/components/TotalReviews.jsx">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="4" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>
