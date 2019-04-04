@@ -11,9 +11,18 @@ class App extends React.Component {
     this.state = {
       allReviews: [],
       reviews: [],
-      avgStars: 0,
+      foundAverage: false,
+      avgRating: null,
+      ratings: {
+        communication: 0,
+        value: 0,
+        cleanliness: 0,
+        location: 0,
+        checkIn: 0,
+        accuracy: 0,
+      },
     };
-    // this.foundAvg = this.foundAvg.bind(this);
+    this.calculateAvg = this.calculateAvg.bind(this);
   }
 
   componentDidMount() {
@@ -29,19 +38,19 @@ class App extends React.Component {
       });
   }
 
-  // foundAvg(avg) {
-  //   this.setState({
-  //     avgStars: avg,
-  //   });
-  // }
+  calculateAvg(avgRating, ratings) {
+    this.setState({
+      avgRating,
+      ratings,
+    });
+  }
 
   render() {
     return (
       <div>
-        <TotalReviews stars={this.state.avgStars} foundAvg={this.foundAvg} />
+        <TotalReviews stars={this.state.avgStars} calculateAvg={this.calculateAvg} />
         <Search />
         <Ratings reviews={this.state.reviews} />
-        <Reviews reviews={this.state.reviews} />
       </div>
     );
   }
