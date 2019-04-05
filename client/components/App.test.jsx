@@ -23,6 +23,11 @@ describe('App component rendering', () => {
     let wrapper = shallow(<App />);
     expect(wrapper.find('Ratings').exists()).toBe(true);
   });
+
+  it('should contain a Reviews component', () => {
+    let wrapper = shallow(<App />);
+    expect(wrapper.find('Reviews').exists()).toBe(true);
+  });
 });
 
 describe('App: componentDidMount', () => {
@@ -67,5 +72,4 @@ describe('App: componentDidMount', () => {
   //   const data = await wrapper.state('reviews').length;
   //   expect(data).not.toEqual(0);
   // });
-
 });

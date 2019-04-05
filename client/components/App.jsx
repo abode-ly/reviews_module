@@ -4,6 +4,7 @@ import TotalReviews from './TotalReviews.jsx';
 import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
+import Reviews from './Reviews.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class App extends React.Component {
         <TotalReviews stars={this.state.avgRating} />
         <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
        {underSearch}
+        <Reviews reviews={this.state.reviews} />
       </div>
     );
   }
