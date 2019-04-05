@@ -2,7 +2,6 @@ import React from 'react';
 import Rating from './Rating.jsx';
 
 function Ratings(props) {
-  console.log(props.ratings.accuracy);
   // if the averages have NOT been calculated before && we have data from DB, then:
   if(!props.foundAverage && props.reviews.length > 0) {  
     const numReviews = props.reviews.length;
