@@ -33,6 +33,7 @@ class App extends React.Component {
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,
+          foundAverage: false,
         });
       })
       .catch(() => {
@@ -63,6 +64,7 @@ class App extends React.Component {
     } else {
       underSearch = <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
     }
+
     return (
       <div>
         <TotalReviews stars={this.state.avgRating} />
