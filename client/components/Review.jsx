@@ -1,10 +1,11 @@
 import React from 'react';
 import moment from 'moment';
+import styles from './Review.module.css';
 
 function Review(props) {
   console.log(props.review.review_text);
   return (
-    <div>
+    <div class='review'>
       <img src={props.review.user_photo}></img>
     <b>{props.review.user_name}</b>
     <div>{moment(props.review.review_date).format('MMMM YYYY')}</div>
