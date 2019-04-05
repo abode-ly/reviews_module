@@ -68,7 +68,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <TotalReviews stars={this.state.avgRating} />
+        <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews}/>
         <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
        {underSearch}
         <Reviews reviews={this.state.reviews} />

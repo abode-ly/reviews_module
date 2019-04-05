@@ -14,6 +14,9 @@ class Search extends React.Component {
     const fitsFilter = this.props.reviews.filter((review) => {
       return review.review_text.includes(searchTerm);
     });
+    // this.setState({
+    //   searchTerm: '',
+    // });
     this.props.filterSearch(searchTerm, fitsFilter);
   }
 

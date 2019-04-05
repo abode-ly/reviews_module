@@ -36,7 +36,7 @@ const ratings = {
   location: 0,
   checkIn: 0,
   accuracy: 0,
-},
+};
 
 describe('Ratings', () => {
   it('should render w/o errors', () => {

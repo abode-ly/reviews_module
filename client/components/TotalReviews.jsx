@@ -3,7 +3,7 @@ import React from 'react';
 function TotalReviews(props) {
   return (
     <div>
-      TotalReviews: {props.stars}
+      {props.reviews.length} TotalReviews: {props.stars}
     </div>
   );
 }
