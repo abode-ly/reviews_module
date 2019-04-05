@@ -20,8 +20,10 @@ class App extends React.Component {
         checkIn: 0,
         accuracy: 0,
       },
+      searchTerm: '',
     };
     this.calculateAvg = this.calculateAvg.bind(this);
+    this.filterSearch = this.filterSearch.bind(this);
   }
 
   componentDidMount() {
@@ -44,12 +46,19 @@ class App extends React.Component {
       foundAverage: true,
     });
   }
+  
+  filterSearch(searchTerm, filtReviews) {
+    this.setState({
+      reviews: filtReviews,
+      searchTerm: searchTerm,
+    });
+  }
 
   render() {
     return (
       <div>
         <TotalReviews stars={this.state.avgRating} />
-        <Search reviews={this.state.reviews} />
+        <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
         <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
       </div>
     );

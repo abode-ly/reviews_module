@@ -10,10 +10,11 @@ class Search extends React.Component {
 
   search(e) {
     e.preventDefault();
-    console.log('search ', this.state.searchTerm);
-    const fitsFilter = this.props.reviews.filter(review => {
-      return review.review_text.includes(this.state.searchTerm);
+    let searchTerm = this.state.searchTerm;
+    const fitsFilter = this.props.reviews.filter((review) => {
+      return review.review_text.includes(searchTerm);
     });
+    this.props.filterSearch(searchTerm, fitsFilter);
   }
 
   input(e) {
