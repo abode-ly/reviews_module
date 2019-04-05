@@ -39,12 +39,12 @@ function Ratings(props) {
 
   return (
     <div>
-      <Rating key="accuracy" type="accuracy" value={props.ratings.accuracy} />
-      <Rating key="communication" type="communication" value={props.ratings.communication} />
-      <Rating key="cleanliness" type="cleanliness" value={props.ratings.cleanliness} />
-      <Rating key="location" type="location" value={props.ratings.location} />
-      <Rating key="checkIn" type="checkIn" value={props.ratings.checkIn} />
-      <Rating key="value" type="value" value={props.ratings.value} />
+      <Rating key="accuracyRating" type="accuracy" value={props.ratings.accuracy} />
+      <Rating key="communicationRating" type="communication" value={props.ratings.communication} />
+      <Rating key="cleanlinessRating" type="cleanliness" value={props.ratings.cleanliness} />
+      <Rating key="locationRating" type="location" value={props.ratings.location} />
+      <Rating key="checkInRating" type="checkIn" value={props.ratings.checkIn} />
+      <Rating key="valueRating" type="value" value={props.ratings.value} />
     </div>
   );
 }

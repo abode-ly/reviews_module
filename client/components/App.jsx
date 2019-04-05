@@ -3,6 +3,7 @@ import axios from 'axios';
 import TotalReviews from './TotalReviews.jsx';
 import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
+import SearchStats from './SearchStats.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class App extends React.Component {
   }
   
   filterSearch(searchTerm, filtReviews) {
+    filtReviews = filtReviews || this.state.allReviews;
     this.setState({
       reviews: filtReviews,
       searchTerm: searchTerm,
@@ -55,11 +57,17 @@ class App extends React.Component {
   }
 
   render() {
+    let underSearch;
+    if (this.state.searchTerm !== '') {
+      underSearch = <SearchStats reviews={this.state.reviews} searchTerm={this.state.searchTerm} filterSearch={this.filterSearch} />
+    } else {
+      underSearch = <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
+    }
     return (
       <div>
         <TotalReviews stars={this.state.avgRating} />
         <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
-        <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
+       {underSearch}
       </div>
     );
   }
