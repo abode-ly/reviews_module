@@ -27,12 +27,20 @@ const data = [{
   communication: { type: 'Buffer', data: [2] },
   location: { type: 'Buffer', data: [4] },
   value: { type: 'Buffer', data: [3] },
-}
-];
+}];
+
+const ratings = {
+  communication: 0,
+  value: 0,
+  cleanliness: 0,
+  location: 0,
+  checkIn: 0,
+  accuracy: 0,
+},
 
 describe('Ratings', () => {
   it('should render w/o errors', () => {
-    const wrapper = shallow(<Ratings reviews={[]}/>);
+    const wrapper = shallow(<Ratings ratings={ratings} foundAverage={false} reviews={data} calculateAvg={()=>{}} />);
     expect(wrapper.find('div').exists()).toBe(true);
   });
 
