@@ -4,6 +4,10 @@ import styles from './Review.module.css';
 import sharedStyles from './Component.module.css';
 
 function Review(props) {
+  const text = props.review.review_text.split('\n').forEach( (paragraph, index) => {
+    return <p className='reviewParagraph' key={index}>{paragraph}</p>;
+  });
+
   return (
     <div className='review'>
     <div className='userInfo'>
@@ -13,9 +17,9 @@ function Review(props) {
         <div className='date'>{moment(props.review.review_date).format('MMMM YYYY')}</div>
       </div>
     </div>
-      {props.review.review_text.split('\n').map( (paragraph) => {
-        return <p className='reviewParagraph'>{paragraph}</p>;
-      })}
+      {/* {props.review.review_text.split('\n').forEach( (paragraph, index) => {
+        return <p className='reviewParagraph' key={index}>{paragraph}</p>;
+      })} */}
     </div>
   );
 }

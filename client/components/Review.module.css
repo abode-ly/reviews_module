@@ -21,8 +21,14 @@ img {
 .name {
   font-size: 16px;
   line-height: 22px;
+  font-weight: 600;
+  font: Arial;
 }
 
 .date {
   font-size: 14px;
+}
+
+.reviewParagraph {
+  
 }
