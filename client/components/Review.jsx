@@ -6,13 +6,11 @@ import sharedStyles from './Component.module.css';
 function Review(props) {
   console.log(props.review.review_text);
   return (
-    <div class='review'>
+    <div className='review'>
       <img src={props.review.user_photo}></img>
-    <b class='name'>{props.review.user_name}</b>
-    <div class='date'>{moment(props.review.review_date).format('MMMM YYYY')}</div>
-    <p>
-      {props.review.review_text}
-    </p>
+    <b className='name'>{props.review.user_name}</b>
+    <div className='date'>{moment(props.review.review_date).format('MMMM YYYY')}</div>  
+    {props.review.review_text.split('\n').map( (paragraph) => {return <p>{paragraph}</p>})}
     </div>
   );
 }
