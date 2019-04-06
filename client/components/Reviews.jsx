@@ -2,7 +2,6 @@ import React from 'react';
 import Review from './Review.jsx';
 
 function Reviews(props) {
-  // console.log(props.reviews)
   return (
     <div>
       {props.reviews.map( (review) => {

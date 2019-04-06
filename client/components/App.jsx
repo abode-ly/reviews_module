@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Reviews from './Reviews.jsx';
+import sharedStyles from './Component.module.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {/* <div className='divider'></div> */}
         <Reviews reviews={this.state.reviews} />
       </div>
     );
