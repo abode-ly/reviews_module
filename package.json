@@ -29,7 +29,11 @@
     "testEnvironment": "enzyme",
     "setupFiles": [
       "<rootDir>/enzyme.config.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -59,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "faker": "^4.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.5.0",
     "jest-environment-enzyme": "^7.0.2",
     "jest-enzyme": "^7.0.2",
