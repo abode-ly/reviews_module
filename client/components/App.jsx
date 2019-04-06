@@ -69,13 +69,10 @@ class App extends React.Component {
 
     return (
       <div>
-<<<<<<< HEAD
         {/* <div className='divider'></div> */}
-=======
         <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews}/>
         <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
        {underSearch}
->>>>>>> eef2f281af659edc936ce9480781b8b44f4a0485
         <Reviews reviews={this.state.reviews} />
       </div>
     );
