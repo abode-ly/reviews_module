@@ -1,9 +1,20 @@
 .review {
-  /* background: purple; */
+  line-height: 20.02px;
+  letter-spacing: normal;
+  text-align: start;
 }
 
 img {
   border-radius: 50%;
-  width: 10%;
+  height: 48px;
+  width: 48px;
 }
 
+.name {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.date {
+  font-size: 14px;
+}
