@@ -51,11 +51,11 @@ class App extends React.Component {
     });
   }
   
-  filterSearch(searchTerm, filtReviews) {
-    filtReviews = filtReviews || this.state.allReviews;
+  filterSearch(searchTerm, reviews) {
+    reviews = reviews || this.state.allReviews;
     this.setState({
-      reviews: filtReviews,
-      searchTerm: searchTerm,
+      reviews,
+      searchTerm,
     });
   }
 
@@ -70,7 +70,7 @@ class App extends React.Component {
     return (
       <div>
         {/* <div className='divider'></div> */}
-        <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews}/>
+        <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
         <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
        {underSearch}
         <Reviews reviews={this.state.reviews} />

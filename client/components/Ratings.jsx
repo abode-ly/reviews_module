@@ -5,12 +5,8 @@ function Ratings(props) {
   // if the averages have NOT been calculated before && we have data from DB, then:
   if(!props.foundAverage && props.reviews.length > 0) {  
     const numReviews = props.reviews.length;
-    let accuracy = 0;
-    let communication = 0;
-    let cleanliness = 0;
-    let location = 0;
-    let checkIn = 0;
-    let value = 0;
+    let accuracy, communication, cleanliness, location, checkIn, value;
+    accuracy = communication = cleanliness = location = checkIn = value = 0;
 
     props.reviews.forEach((review) => {
       // NOTE: The ratings are stored as Buffers instead of Numbers in MongoDB

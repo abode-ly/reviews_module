@@ -4,44 +4,40 @@ import App from './App.jsx';
 import { doesNotReject } from 'assert';
 
 describe('App component rendering', () => {
+  const wrapper = shallow(<App />);
+
   it('should render App component w/o throwing an error', () => {
-    let wrapper = shallow(<App />);
     expect(wrapper.find('div').exists()).toBe(true);
   });
 
   it('should contain a TotalReviews component', () => {
-    let wrapper = shallow(<App />);
     expect(wrapper.find('TotalReviews').exists()).toBe(true);
   });
 
   it('should contain a Search component', () => {
-    let wrapper = shallow(<App />);
     expect(wrapper.find('Search').exists()).toBe(true);
   });
 
   it('should contain a Ratings component', () => {
-    let wrapper = shallow(<App />);
     expect(wrapper.find('Ratings').exists()).toBe(true);
   });
 
   it('should contain a Reviews component', () => {
-    let wrapper = shallow(<App />);
     expect(wrapper.find('Reviews').exists()).toBe(true);
   });
 });
 
-describe('App: componentDidMount', () => {
-  it('componentDidMount should be only called once', () => {
-    let componentDidMountSpy = spyOn(App.prototype, 'componentDidMount');
-    let wrapper = shallow(<App />);
-    expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
-  });
+// describe('App: componentDidMount', () => {
+//   const wrapper = shallow(<App />);
+//   it('componentDidMount should be only called once', () => {
+//     let componentDidMountSpy = spyOn(App.prototype, 'componentDidMount');
+//     expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
+//   });
 
-  it('state should be populated after componentDidMount runs', () => {
-    const component = shallow(<App />);
-    expect(component.state('reviews').length).not.toEqual(4);
-  });
-
+//   it('state should be populated after componentDidMount runs', () => {
+//     expect(wrapper.state('reviews').length).not.toEqual(4);
+//   });
+// });
   // it('state should be populated after componentDidMount runs', () => {
   //   let component = shallow(<App />);
   //   expect.extend({
@@ -72,4 +68,4 @@ describe('App: componentDidMount', () => {
   //   const data = await wrapper.state('reviews').length;
   //   expect(data).not.toEqual(0);
   // });
-});
+// });
