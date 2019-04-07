@@ -29,10 +29,15 @@ class Search extends React.Component {
   }
 
   render() {
+    let x;
+    if(this.state.searchTerm !== '') {
+      x = <i className="fas fa-times" onClick={()=>{this.setState({searchTerm: ''})}}></i>;
+    }
     return (
       <form onSubmit={(e) => { this.search(e);}} className='search' >
-        <i class="fas fa-search"></i>
-        <input className='searchBar' type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}}></input>
+        <i className="fas fa-search"></i>
+        <input className='searchBar' type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}} value={this.state.searchTerm}></input>
+        {x}
       </form>
     );
   }

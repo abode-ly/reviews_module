@@ -12,14 +12,21 @@
   line-height: 24px;
   font-size: 16px;
   letter-spacing: normal;
-  text-indent: 30px;
-  /* align-items: center; */
-  /* justify-content: center; */
+  /* text-indent: 30px; */
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .fa-search {
   position: absolute;
   top: 8px;
   left: 7px;
+  font-size: 16px;
+}
+
+.fa-times {
+  position: absolute;
+  top: 8px;
+  left: 210px;
   font-size: 16px;
 }
