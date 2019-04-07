@@ -71,7 +71,7 @@ class App extends React.Component {
       <div>
         {/* <div className='divider'></div> */}
         <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
-        <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
+        <Search reviews={this.state.allReviews} filterSearch={this.filterSearch} />
        {underSearch}
         <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
       </div>
