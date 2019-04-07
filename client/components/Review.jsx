@@ -3,11 +3,8 @@ import moment from 'moment';
 import styles from './Review.module.css';
 import sharedStyles from './Component.module.css';
 import DOMPurify from 'dompurify';
-// import HTMLView from 'react-native-htmlview';
-// import { ScrollView, Dimensions } from 'react-native';
 
 function Review(props) {
-
   const text = props.review.review_text.split('\n').map( (paragraph, index) => {
     const boldPara = paragraph.replace(props.searchTerm, `<b>${props.searchTerm}</b>`);
     return <p className='reviewParagraph' key={index} dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(boldPara)}}></p>;
