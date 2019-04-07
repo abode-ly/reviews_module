@@ -1,0 +1,33 @@
+.reviewTitle {
+  font-size: 14px;
+  line-height: 20.02px;
+  fill: #484848;
+  letter-spacing: normal;
+  display: flex;
+  align-items: flex-start;
+}
+
+.reviewTitle {
+  font-size: 24px;
+  line-height: 30px;
+  fill: #484848;
+}
+
+.totalStars {
+  font-size: 24px;
+  fill: #484848;
+}
+
+.star {
+  line-height: 25.74px;
+  font-size: 18px;
+  fill: #484848;
+}
+
+.coloredStar {
+  fill: #008489;
+}
+
+.uncoloredStar {
+  fill: #d8d8d8;
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './Search.module.css';
+import sharedStyles from './Component.module.css';
 
 class Search extends React.Component {
   constructor(props) {
@@ -28,8 +30,8 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form onSubmit={(e) => { this.search(e); }}>
-        <input type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}}></input>
+      <form onSubmit={(e) => { this.search(e);}} className='search' >
+        <input className='searchBar' type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}}></input>
       </form>
     );
   }
