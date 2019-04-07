@@ -16,9 +16,6 @@ class Search extends React.Component {
     const fitsFilter = this.props.reviews.filter((review) => {
       return review.review_text.includes(searchTerm);
     });
-    // this.setState({
-    //   searchTerm: '',
-    // });
     this.props.filterSearch(searchTerm, fitsFilter);
   }
 
@@ -28,10 +25,17 @@ class Search extends React.Component {
     });
   }
 
+  clear() {
+    this.setState({
+      searchTerm: '',
+    });
+    this.props.filterSearch('');
+  }
+
   render() {
     let x;
     if(this.state.searchTerm !== '') {
-      x = <i className="fas fa-times" onClick={()=>{this.setState({searchTerm: ''})}}></i>;
+      x = <i className="fas fa-times" onClick={()=>{this.clear()}}></i>;
     }
     return (
       <form onSubmit={(e) => { this.search(e);}} className='search' >
