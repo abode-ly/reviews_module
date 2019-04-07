@@ -2,20 +2,15 @@ import React from 'react';
 import moment from 'moment';
 import styles from './Review.module.css';
 import sharedStyles from './Component.module.css';
-import DOMPurify from 'dompurify';
+// import DOMPurify from 'dompurify';
+// import HTMLView from 'react-native-htmlview';
+// import { ScrollView, Dimensions } from 'react-native';
 
 function Review(props) {
 
   const text = props.review.review_text.split('\n').map( (paragraph, index) => {
-    const boldSearchTerm = JSON.stringify(DOMPurify.sanitize(<b>{props.searchTerm}</b>));
-    function createMarkup() {
-      return {__html: paragraph.replace(props.searchTerm, boldSearchTerm)};
-    }
-    // const boldPara = paragraph.split(props.searchTerm).join(<strong>{props.searchTerm}</strong>);
-    // console.log(paragraph.replace(props.searchTerm, props.searchTerm.bold()));
-    // console.log(props.searchTerm.bold());
-    // const boldPara = paragraph.replace(props.searchTerm, `<b>${props.searchTerm}</b>`);
-    return <p className='reviewParagraph' key={index} dangerouslySetInnerHTML={createMarkup()}></p>;
+    const boldPara = paragraph.replace(props.searchTerm, `<b>${props.searchTerm}</b>`);
+    return <p className='reviewParagraph' key={index} dangerouslySetInnerHTML={{__html: boldPara}}></p>;
   });
 
   return (
@@ -28,9 +23,6 @@ function Review(props) {
         </div>
       </div>
       {text}
-      {/* {props.review.review_text.split('\n').map( (paragraph, index) => {
-        return <p className='reviewParagraph' key={index}>{paragraph}</p>;
-      })} */}
     </div>
   );
 }
