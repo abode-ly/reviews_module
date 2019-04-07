@@ -5,7 +5,7 @@ function Reviews(props) {
   return (
     <div>
       {props.reviews.map( (review) => {
-        return <Review key={review._id} review={review} />;
+        return <Review key={review._id} review={review} searchTerm={props.searchTerm} />;
       })}
     </div>
   );
