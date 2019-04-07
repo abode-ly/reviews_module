@@ -31,6 +31,7 @@ class Search extends React.Component {
   render() {
     return (
       <form onSubmit={(e) => { this.search(e);}} className='search' >
+        <i class="fas fa-search"></i>
         <input className='searchBar' type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}}></input>
       </form>
     );
