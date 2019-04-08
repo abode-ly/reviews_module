@@ -26,6 +26,7 @@ class App extends React.Component {
       },
       searchTerm: '',
       pageNum: 1,
+      maxPage: 2,
     };
     this.calculateAvg = this.calculateAvg.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
@@ -88,7 +89,7 @@ class App extends React.Component {
        {underSearch}
        <hr></hr>
         <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
-        <BackForthBtn newPage={this.newPage} pageNum={this.state.pageNum} />
+        <BackForthBtn newPage={this.newPage} pageNum={this.state.pageNum} maxPage={this.state.maxPage} />
       </div>
     );
   }

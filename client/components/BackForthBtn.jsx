@@ -3,9 +3,9 @@ import styles from './BackForthBtn.module.css';
 
 function BackForthBtn (props) {
   const changePage = (buttonValue) => {
-    if (buttonValue === 'leftBtn') {
+    if (buttonValue === 'leftBtn' && props.pageNum > 1) {
       props.newPage(props.pageNum - 1);
-    } else if (buttonValue === 'rightBtn') {
+    } else if (buttonValue === 'rightBtn' && props.pageNum < props.maxPage) {
       props.newPage(props.pageNum + 1);
     }
   };
