@@ -6,3 +6,9 @@
 hr{
   fill: #484848;
 }
+
+.totalAndSearch{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
