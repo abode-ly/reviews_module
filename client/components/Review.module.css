@@ -41,3 +41,8 @@ a{
   color: #008489;
   display: inline;
 }
+
+/* .a:target +.reviewParagraph{
+  background: red;
+  display: block;
+} */
