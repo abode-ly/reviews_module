@@ -5,6 +5,7 @@ import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
+import BackForthBtn from './BackForthBtn.jsx';
 import sharedStyles from './Component.module.css';
 
 class App extends React.Component {
@@ -24,9 +25,11 @@ class App extends React.Component {
         accuracy: 0,
       },
       searchTerm: '',
+      pageNum: 1,
     };
     this.calculateAvg = this.calculateAvg.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
+    this.newPage = this.newPage.bind(this);
   }
 
   componentDidMount() {
@@ -59,6 +62,13 @@ class App extends React.Component {
     });
   }
 
+  newPage(pageNum) {
+    console.log(pageNum);
+    this.setState({
+      pageNum,
+    });
+  }
+
   render() {
     let underSearch;
     if (this.state.searchTerm !== '') {
@@ -78,6 +88,7 @@ class App extends React.Component {
        {underSearch}
        <hr></hr>
         <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
+        <BackForthBtn newPage={this.newPage} pageNum={this.state.pageNum} />
       </div>
     );
   }

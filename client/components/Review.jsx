@@ -34,7 +34,6 @@ class Review extends React.Component {
         });
       } else {
         const paragraphs = first50WordsStr.concat('...').split('\n').map((paragraph, index) => {
-          console.log(paragraph);
           return (
             <p key={index} className='reviewParagraph'>{paragraph}</p>
           );
