@@ -29,3 +29,9 @@
   background:#008489;
   color: #ffffff;
 }
+
+@media screen and (max-width: 600px) {
+  .paginationBtn{
+    display: none;
+  }
+}
