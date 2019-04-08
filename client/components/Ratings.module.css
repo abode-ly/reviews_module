@@ -8,6 +8,11 @@
   /* flex-flow: row wrap, column wrap; */
 }
 
+.criteriaAndStars{
+  display: flex;
+  justify-content: space-between;
+}
+
 .ratingTriple{
   /* height: 93px;
   width: 316px; */

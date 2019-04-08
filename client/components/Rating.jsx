@@ -5,8 +5,8 @@ import stars from './Stars.module.css';
 
 function Rating(props) {
   return (
-    <div>
-      {props.type}
+    <div className="criteriaAndStars">
+      <div>{props.type}</div>
       <span className={`stars stars-${(Math.ceil(props.value+1)/10)*100}`}> ★★★★★ </span>
     </div>
   );
