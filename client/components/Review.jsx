@@ -21,12 +21,12 @@ class Review extends React.Component {
       });
     } else {
       const reviewWordsArr = this.props.review.review_text.split(' ');
-      const first50WordsArr = reviewWordsArr.slice(0, 50);
+      const first50WordsArr = reviewWordsArr.slice(0, 35);
       const first50WordsStr = first50WordsArr.join(' ');
       
-      if (reviewWordsArr.length<=50 && !first50WordsStr.includes('\n')) {
+      if (reviewWordsArr.length<=35 && !first50WordsStr.includes('\n')) {
         reviewText = <p className='reviewParagraph'>{first50WordsStr}</p>;
-      } else if (reviewWordsArr.length<=50) {
+      } else if (reviewWordsArr.length<=35) {
         reviewText = first50WordsStr.split('\n').map((paragraph, index) => {
           return (
             <p key={index} className='reviewParagraph'>{paragraph}</p>
