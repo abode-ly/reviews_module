@@ -14,7 +14,6 @@ function Reviews (props) {
       })}
     </div>
   );
-
 }
 
 export default Reviews;

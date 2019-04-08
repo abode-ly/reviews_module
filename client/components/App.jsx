@@ -27,8 +27,8 @@ class App extends React.Component {
       },
       searchTerm: '',
       pageNum: 1,
-      maxPage: 1,
       reviewsPerPage: 7,
+      maxPage: 1,
     };
     this.calculateAvg = this.calculateAvg.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
@@ -38,10 +38,12 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/abodes/6/reviews')
       .then((listingInfo) => {
+        let reviewsPerPage = this.state.reviewsPerPage;
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,
           foundAverage: false,
+          maxPage: Math.ceil(listingInfo.data.reviews.length / reviewsPerPage),
         });
       })
       .catch(() => {
@@ -59,9 +61,12 @@ class App extends React.Component {
   
   filterSearch(searchTerm, reviews) {
     reviews = reviews || this.state.allReviews;
+    let reviewsPerPage = this.state.reviewsPerPage;
     this.setState({
       reviews,
       searchTerm,
+      maxPage: Math.ceil(reviews.length/reviewsPerPage),
+      pageNum: 1,
     });
   }
 
@@ -90,7 +95,7 @@ class App extends React.Component {
        {underSearch}
        <hr></hr>
         <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} pageNum={this.state.pageNum} reviewsPerPage={this.state.reviewsPerPage} />
-        <Pagination maxPage={this.state.maxPage} />
+        <Pagination maxPage={this.state.maxPage} newPageFn={this.newPage} />
         <BackForthBtn newPage={this.newPage} pageNum={this.state.pageNum} maxPage={this.state.maxPage} />
       </div>
     );
