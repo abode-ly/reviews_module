@@ -34,4 +34,10 @@ img {
 .reviewParagraph {
   font-size: 16px;
   color: #484848;
+  display: inline;
+}
+
+a{
+  color: #008489;
+  display: inline;
 }
