@@ -1,26 +1,20 @@
 import React from 'react';
 import Review from './Review.jsx';
 
-class Reviews extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      maxPage: 1,
-    }
-  }
+function Reviews (props) {
+  const {reviews, pageNum, searchTerm, reviewsPerPage} = props;
+  const lastReviewOnPage = pageNum * reviewsPerPage;
+  const firstReviewOnPage = (pageNum-1) * reviewsPerPage;
+  const reviewsToRender = reviews.slice(firstReviewOnPage, lastReviewOnPage);
 
-  render() {
-    const {reviews, pageNum, searchTerm} = this.props;
-    const reviewsToRender = reviews.slice(0, pageNum+1);
+  return (
+    <div>
+      {reviewsToRender.map( (review) => {
+        return <Review key={review._id} review={review} searchTerm={searchTerm} />;
+      })}
+    </div>
+  );
 
-    return (
-      <div>
-        {reviewsToRender.map( (review) => {
-          return <Review key={review._id} review={review} searchTerm={searchTerm} />;
-        })}
-      </div>
-    );
-  }
 }
 
 export default Reviews;
