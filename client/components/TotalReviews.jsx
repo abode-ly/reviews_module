@@ -7,7 +7,7 @@ function TotalReviews(props) {
   return (
     <div className='totalReviews'>
       <div className='reviewTitle'>{props.reviews.length} Reviews </div>
-      <span className={`stars stars-${Math.ceil(Math.round(props.stars)*10)}`}> ★★★★★ </span>
+      <span className={`stars stars-${(Math.ceil(props.stars+1)/10)*100}`}> ★★★★★ </span>
     </div>
   );
 }
