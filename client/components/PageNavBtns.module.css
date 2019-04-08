@@ -19,6 +19,9 @@
   border-radius: 50%;
   border: none;
   color:#008489;
+  height: 6vw;
+  width: 6vw;
+  margin: 3px;
 }
 
 .paginationBtn:hover {
