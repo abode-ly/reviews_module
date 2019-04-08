@@ -13,11 +13,21 @@ function BackForthBtn (props) {
     }
   };
 
+  let leftBtn = '';
+  if (pageNum !== 1) {
+    leftBtn = <button type='button' className='fas fa-arrow-left' id='leftBtn' onClick={(e) => { changePage(e.target.id); }} />;
+  }
+
+  let rightBtn = '';
+  if (Number(pageNum) !== maxPage) {
+    rightBtn = <button type='button' className='fas fa-arrow-right' id='rightBtn' onClick={(e) => { changePage(e.target.id); }} />;
+  }
+
   return (
     <div className='PageNavBtns'>
-      <button type='button' className='fas fa-arrow-left' id='leftBtn' onClick={(e) => { changePage(e.target.id); }} />
+      {leftBtn}
       <Pagination newPageFn={newPageFn} maxPage={maxPage}/>
-      <button type='button' className='fas fa-arrow-right' id='rightBtn' onClick={(e) => { changePage(e.target.id); }} />
+      {rightBtn}
     </div>
   );
 }
