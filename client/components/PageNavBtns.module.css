@@ -1,5 +1,7 @@
 .PageNavBtns{
   line-height: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .PageNavBtns .fas{
@@ -7,4 +9,20 @@
   color:#008489;
   border-radius: 50%;
   border: 2px solid;
+}
+
+.paginationBtn {
+  font-size: 14px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  border: none;
+}
+
+.paginationBtn:hover {
+  text-decoration: underline;
+}
+
+.paginationBtn:focus {
+  background:#008489;
 }
