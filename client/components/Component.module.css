@@ -2,7 +2,7 @@
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   display: flex;
 }
-/* 
-.divider {
-  border: 16px black;
-} */
+
+hr{
+  fill: #484848;
+}

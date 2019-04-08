@@ -20,6 +20,7 @@ function Review(props) {
         </div>
       </div>
       {text}
+      <hr></hr>
     </div>
   );
 }

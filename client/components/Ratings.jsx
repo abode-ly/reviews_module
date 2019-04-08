@@ -1,5 +1,7 @@
 import React from 'react';
 import Rating from './Rating.jsx';
+import styles from './Ratings.module.css';
+import sharedStyles from './Component.module.css';
 
 function Ratings(props) {
   // if the averages have NOT been calculated before && we have data from DB, then:
@@ -34,13 +36,17 @@ function Ratings(props) {
   }
 
   return (
-    <div>
-      <Rating key="accuracyRating" type="accuracy" value={props.ratings.accuracy} />
-      <Rating key="communicationRating" type="communication" value={props.ratings.communication} />
-      <Rating key="cleanlinessRating" type="cleanliness" value={props.ratings.cleanliness} />
-      <Rating key="locationRating" type="location" value={props.ratings.location} />
-      <Rating key="checkInRating" type="checkIn" value={props.ratings.checkIn} />
-      <Rating key="valueRating" type="value" value={props.ratings.value} />
+    <div className='ratingsContainer'>
+      <span className='ratingTriple ratingsLeft'>
+        <Rating key="accuracyRating" type="Accuracy" value={props.ratings.accuracy} />
+        <Rating key="communicationRating" type="Communication" value={props.ratings.communication} />
+        <Rating key="cleanlinessRating" type="Cleanliness" value={props.ratings.cleanliness} />
+      </span>
+      <span className='ratingTriple ratingsRight'>
+        <Rating key="locationRating" type="Location" value={props.ratings.location} />
+        <Rating key="checkInRating" type="Check-in" value={props.ratings.checkIn} />
+        <Rating key="valueRating" type="Value" value={props.ratings.value} />
+      </span>
     </div>
   );
 }

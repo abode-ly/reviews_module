@@ -30,7 +30,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/abodes/2/reviews')
+    axios.get('/abodes/6/reviews')
       .then((listingInfo) => {
         this.setState({
           allReviews: listingInfo.data.reviews,
@@ -74,7 +74,9 @@ class App extends React.Component {
           <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
           <Search reviews={this.state.allReviews} filterSearch={this.filterSearch} />
         </div>
+        <hr></hr>
        {underSearch}
+       <hr></hr>
         <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
       </div>
     );

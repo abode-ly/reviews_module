@@ -1,0 +1,32 @@
+.ratingsContainer{
+  display: flex;
+  width: 100%;
+  flex-wrap: row wrap;
+  flex-direction: row;
+  /* position: relative; */
+  /* min-width: auto;  */
+  /* flex-flow: row wrap, column wrap; */
+}
+
+.ratingTriple{
+  /* height: 93px;
+  width: 316px; */
+  padding: 0px 8px 0px;
+  line-height: 20.02px;
+  text-align: start;
+  width: 50%;
+  flex-direction: column;
+  display: flex;
+}
+
+.ratingsLeft{
+  /* flex: 0 0 auto; */
+  font-size: 14px;
+  /* justify-content: flex-end; */
+}
+
+.ratingsRight{
+  /* flex: 0 0 auto; */
+  font-size: 14px;
+  /* justify-content: flex-start; */
+}
