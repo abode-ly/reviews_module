@@ -43,11 +43,12 @@ class Review extends React.Component {
             {paragraphs}
             <a onClick={()=>{this.setState({expanded: true})}}>Read more</a>
           </span>
-        )
+        );
       }
     }
+
     return (
-      <div className='review'>
+      <div className='review' >
         <div className='userInfo'>
           <img src={this.props.review.user_photo} alt={this.props.review.user_name}></img>
           <div>

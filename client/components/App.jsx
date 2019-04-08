@@ -5,6 +5,7 @@ import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
+import Pagination from './Pagination.jsx';
 import BackForthBtn from './BackForthBtn.jsx';
 import sharedStyles from './Component.module.css';
 
@@ -26,7 +27,7 @@ class App extends React.Component {
       },
       searchTerm: '',
       pageNum: 1,
-      maxPage: 2,
+      maxPage: 1,
     };
     this.calculateAvg = this.calculateAvg.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
@@ -80,7 +81,6 @@ class App extends React.Component {
 
     return (
       <div>
-        {/* <div className='divider'></div> */}
         <div>
           <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
           <Search reviews={this.state.allReviews} filterSearch={this.filterSearch} />
@@ -88,7 +88,8 @@ class App extends React.Component {
         <hr></hr>
        {underSearch}
        <hr></hr>
-        <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
+        <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} pageNum={this.state.pageNum} />
+        <Pagination maxPage={this.state.maxPage} />
         <BackForthBtn newPage={this.newPage} pageNum={this.state.pageNum} maxPage={this.state.maxPage} />
       </div>
     );
