@@ -7,7 +7,7 @@ function PaginationBtn (props) {
   }
 
   return (
-    <button id={pageNum} onClick={(e)=>{clickHandler(e.target.id)}}>{pageNum}</button>
+    <button className='paginationBtn' id={pageNum} onClick={(e)=>{clickHandler(e.target.id)}}>{pageNum}</button>
   )
 }
 

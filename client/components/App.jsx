@@ -5,8 +5,7 @@ import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
-import Pagination from './Pagination.jsx';
-import BackForthBtn from './BackForthBtn.jsx';
+import PageNavBtns from './PageNavBtns.jsx';
 import sharedStyles from './Component.module.css';
 
 class App extends React.Component {
@@ -71,7 +70,6 @@ class App extends React.Component {
   }
 
   newPage(pageNum) {
-    console.log(pageNum);
     this.setState({
       pageNum,
     });
@@ -95,8 +93,7 @@ class App extends React.Component {
        {underSearch}
        <hr></hr>
         <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} pageNum={this.state.pageNum} reviewsPerPage={this.state.reviewsPerPage} />
-        <Pagination maxPage={this.state.maxPage} newPageFn={this.newPage} />
-        <BackForthBtn newPage={this.newPage} pageNum={this.state.pageNum} maxPage={this.state.maxPage} />
+        <PageNavBtns newPageFn={this.newPage} newPage={this.newPage} pageNum={this.state.pageNum} maxPage={this.state.maxPage} />
       </div>
     );
   }
