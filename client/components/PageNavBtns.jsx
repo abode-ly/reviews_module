@@ -26,7 +26,7 @@ function BackForthBtn (props) {
   return (
     <div className='PageNavBtns'>
       {leftBtn}
-      <Pagination newPageFn={newPageFn} maxPage={maxPage}/>
+      <Pagination newPageFn={newPageFn} maxPage={maxPage} pageNum={Number(pageNum)} />
       {rightBtn}
     </div>
   );

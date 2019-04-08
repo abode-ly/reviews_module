@@ -2,10 +2,10 @@ import React from 'react';
 import PaginationBtn from './PaginationBtn';
 
 function Pagination (props) {
-  const {maxPage, newPageFn} = props;
+  const {maxPage, newPageFn, pageNum} = props;
   const pageNumbers = [];
-  for (let pageNum = 1; pageNum <= maxPage; pageNum++) {
-    pageNumbers.push(pageNum);
+  for (let page = 1; page <= maxPage; page++) {
+    pageNumbers.push(page);
   }
   return (
     <div>
