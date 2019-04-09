@@ -19,6 +19,7 @@ module.exports = {
     'react', 'jest',
   ],
   rules: {
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
   },
   parser: "babel-eslint",
 };

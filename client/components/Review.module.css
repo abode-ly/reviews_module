@@ -1,0 +1,43 @@
+.review {
+  line-height: 20.02px;
+  letter-spacing: normal;
+  text-align: start;
+  width: 588px;
+  /* height: 155px; */
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #484848;
+}
+
+img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  padding: 0px 20px 0px 0px;
+}
+
+.name {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  font: Arial;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.reviewParagraph {
+  font-size: 16px;
+  color: #484848;
+  display: inline;
+}
+
+a{
+  color: #008489;
+  display: inline;
+}

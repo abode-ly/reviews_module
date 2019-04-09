@@ -2,12 +2,12 @@ const faker = require('faker');
 const { Review } = require('./db.js');
 
 const reviewText = () => {
-  let reviewParagraphs = '';
+  let reviewParagraphsArr = [];
   const reviewLength = Math.ceil(Math.random() * 4);
   for (let paragraphs = 0; paragraphs < reviewLength; paragraphs++) {
-    reviewParagraphs = reviewParagraphs + '\n' + faker.lorem.paragraph();
+    reviewParagraphsArr.push(faker.lorem.paragraph());
   }
-  return reviewParagraphs;
+  return reviewParagraphsArr.join('\n');
 };
 
 const generateReviews = () => {
