@@ -76,24 +76,25 @@ class App extends React.Component {
   }
 
   render() {
+    const { searchTerm, reviews, allReviews, ratings, foundAverage, avgRating, pageNum, reviewsPerPage, maxPage } = this.state;
     let underSearch;
-    if (this.state.searchTerm !== '') {
-      underSearch = <SearchStats reviews={this.state.reviews} searchTerm={this.state.searchTerm} filterSearch={this.filterSearch} />
+    if (searchTerm !== '') {
+      underSearch = <SearchStats reviews={reviews} searchTerm={searchTerm} filterSearch={this.filterSearch} />;
     } else {
-      underSearch = <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
+      underSearch = <Ratings ratings={ratings} foundAverage={foundAverage} reviews={reviews} calculateAvg={this.calculateAvg} />;
     }
 
     return (
       <div>
         <div className="totalAndSearch">
-          <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
-          <Search reviews={this.state.allReviews} filterSearch={this.filterSearch} />
+          <TotalReviews stars={avgRating} reviews={reviews} />
+          <Search reviews={allReviews} filterSearch={this.filterSearch} />
         </div>
         <hr></hr>
        {underSearch}
        <hr></hr>
-        <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} pageNum={this.state.pageNum} reviewsPerPage={this.state.reviewsPerPage} />
-        <PageNavBtns newPageFn={this.newPage} newPage={this.newPage} pageNum={this.state.pageNum} maxPage={this.state.maxPage} />
+        <Reviews searchTerm={searchTerm} reviews={reviews} pageNum={pageNum} reviewsPerPage={reviewsPerPage} />
+        <PageNavBtns newPageFn={this.newPage} newPage={this.newPage} pageNum={pageNum} maxPage={maxPage} />
       </div>
     );
   }
