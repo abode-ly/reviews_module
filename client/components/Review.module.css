@@ -42,6 +42,10 @@ a{
   display: inline;
 }
 
+a:hover{
+  text-decoration: underline;
+}
+
 /* .a:target +.reviewParagraph{
   background: red;
   display: block;
