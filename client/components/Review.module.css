@@ -47,7 +47,8 @@ a:hover{
   text-decoration: underline;
 }
 
-/* .a:target +.reviewParagraph{
-  background: red;
-  display: block;
-} */
+@media only screen and (max-width: 600px) {
+  .review {
+    width: 90vw;
+  }
+}
