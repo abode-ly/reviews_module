@@ -4,10 +4,11 @@ import sharedStyles from './Component.module.css';
 import stars from './Stars.module.css';
 
 function Rating(props) {
+  const { value, type } = props;
   return (
     <div className="criteriaAndStars">
-      <div>{props.type}</div>
-      <span className={`stars stars-${(Math.ceil(props.value+1)/10)*100}`}> ★★★★★ </span>
+      <div>{type}</div>
+      <span className={`stars stars-${(Math.ceil(value + 1) / 10) * 100}`}> ★★★★★ </span>
     </div>
   );
 }
