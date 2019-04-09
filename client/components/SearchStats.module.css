@@ -1,11 +1,12 @@
 .searchStats{
   display: inline-flex;
   justify-content: space-between;
-  width: 90vw;
+  width: 90%;
 }
 
 .searchStats p{
   font-size: 14px;
+  margin: 0px;
 }
 
 .backToReviews{
@@ -14,4 +15,12 @@
 
 .backToReviews:hover{
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .searchStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

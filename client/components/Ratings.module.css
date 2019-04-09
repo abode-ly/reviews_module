@@ -1,6 +1,6 @@
 .ratingsContainer{
   display: flex;
-  width: 100%;
+  width: 95%;
   flex-wrap: row wrap;
   flex-direction: row;
 }
@@ -33,8 +33,13 @@
   .ratingsContainer{
     display: flex;
     flex-direction: column;
+    width: 95%;
   }
+  .ratingTriple{
+    width: 100%
+  }
+
   .criteriaAndStars{
-    width: 90vw;
+    width: 100%;
   }
 }

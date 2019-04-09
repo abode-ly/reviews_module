@@ -35,9 +35,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const { reviewsPerPage } = this.state;
     axios.get('/abodes/98/reviews')
       .then((listingInfo) => {
-        let reviewsPerPage = this.state.reviewsPerPage;
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,
@@ -59,12 +59,12 @@ class App extends React.Component {
   }
   
   filterSearch(searchTerm, reviews) {
-    reviews = reviews || this.state.allReviews;
-    let reviewsPerPage = this.state.reviewsPerPage;
+    const { allReviews, reviewsPerPage } = this.state;
+    reviews = reviews || allReviews;
     this.setState({
       reviews,
       searchTerm,
-      maxPage: Math.ceil(reviews.length/reviewsPerPage),
+      maxPage: Math.ceil(reviews.length / reviewsPerPage),
       pageNum: 1,
     });
   }
@@ -87,12 +87,12 @@ class App extends React.Component {
     return (
       <div>
         <div className="totalAndSearch">
-          <TotalReviews stars={avgRating} reviews={reviews} />
+          <TotalReviews stars={avgRating} reviews={allReviews} />
           <Search reviews={allReviews} filterSearch={this.filterSearch} />
         </div>
-        <hr></hr>
-       {underSearch}
-       <hr></hr>
+        <hr />
+        { underSearch }
+        <hr />
         <Reviews searchTerm={searchTerm} reviews={reviews} pageNum={pageNum} reviewsPerPage={reviewsPerPage} />
         <PageNavBtns newPageFn={this.newPage} newPage={this.newPage} pageNum={pageNum} maxPage={maxPage} />
       </div>

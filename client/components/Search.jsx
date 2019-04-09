@@ -11,12 +11,13 @@ class Search extends React.Component {
   }
 
   search(e) {
+    const { filterSearch, reviews } = this.props;
+    const { searchTerm } = this.state;
     e.preventDefault();
-    let searchTerm = this.state.searchTerm;
-    const fitsFilter = this.props.reviews.filter((review) => {
+    const fitsFilter = reviews.filter((review) => {
       return review.review_text.includes(searchTerm);
     });
-    this.props.filterSearch(searchTerm, fitsFilter);
+    filterSearch(searchTerm, fitsFilter);
   }
 
   input(e) {
@@ -26,21 +27,23 @@ class Search extends React.Component {
   }
 
   clear() {
+    const { filterSearch } = this.props;
     this.setState({
       searchTerm: '',
     });
-    this.props.filterSearch('');
+    filterSearch('');
   }
 
   render() {
+    const { searchTerm } = this.state;
     let x;
-    if(this.state.searchTerm !== '') {
-      x = <i className="fas fa-times" onClick={()=>{this.clear()}}></i>;
+    if (searchTerm !== '') {
+      x = <i className="fas fa-times" onClick={()=>{this.clear()}} />;
     }
     return (
-      <form onSubmit={(e) => { this.search(e);}} className='search' >
-        <i className="fas fa-search"></i>
-        <input className='searchBar' type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}} value={this.state.searchTerm}></input>
+      <form onSubmit={(e) => { this.search(e); }} className="search">
+        <i className="fas fa-search" />
+        <input className="searchBar" type="text" placeholder="Search reviews" onChange={(e)=>{this.input(e)}} value={this.state.searchTerm} />
         {x}
       </form>
     );

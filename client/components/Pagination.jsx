@@ -5,7 +5,7 @@ import sharedStyles from './Component.module.css';
 
 
 function Pagination (props) {
-  const {maxPage, newPageFn, pageNum} = props;
+  const { maxPage, newPageFn, pageNum } = props;
   const pageNumbers = [];
 
   const appendMaxPage = () => {

@@ -4,7 +4,6 @@
   text-align: start;
   width: 588px;
   padding: 25px 0px;
-  /* height: 155px; */
 }
 
 .userInfo {
@@ -50,6 +49,6 @@ a:hover{
 
 @media only screen and (max-width: 600px) {
   .review {
-    width: 90vw;
+    width: 85%;
   }
 }

@@ -2,7 +2,6 @@
   line-height: 10px;
   display: flex;
   align-items: center;
-  flex-direction: row;
 }
 
 .PageNavBtns .fas{
@@ -34,7 +33,6 @@ nav.pagination{
   padding: 0px 10px;
   margin: 8px;
   display: inline-flex; 
-  flex-direction: row;
   align-items: center;
 }
 
@@ -44,13 +42,13 @@ nav.pagination{
   line-height: 32px;
   height: 30px;
   width: 30px;
-  padding: 0px 10px;
+  padding: 0px;
   margin: 8px;
   display: inline-flex; 
-  flex-direction: row;
   align-items: center;
   border-radius: 50%;
   border: none;
+  justify-content: center;
 }
 
 .paginationBtn:hover {

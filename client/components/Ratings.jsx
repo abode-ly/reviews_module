@@ -27,24 +27,24 @@ function Ratings(props) {
     const totalRatings = accuracy + communication + cleanliness + location + checkIn + value;
     const avgRating = (totalRatings / 6 / numReviews);
     const calcRatings = {
-      accuracy: accuracy/numReviews,
-      communication: communication/numReviews,
-      cleanliness: cleanliness/numReviews,
-      location: location/numReviews,
-      checkIn: checkIn/numReviews,
-      value: value/numReviews,
+      accuracy: accuracy / numReviews,
+      communication: communication / numReviews,
+      cleanliness: cleanliness / numReviews,
+      location: location / numReviews,
+      checkIn: checkIn / numReviews,
+      value: value / numReviews,
     };
     calculateAvg(avgRating, calcRatings);
   }
 
   return (
-    <div className='ratingsContainer'>
-      <span className='ratingTriple ratingsLeft'>
+    <div className="ratingsContainer">
+      <span className="ratingTriple ratingsLeft">
         <Rating key="accuracyRating" type="Accuracy" value={ratings.accuracy} />
         <Rating key="communicationRating" type="Communication" value={ratings.communication} />
         <Rating key="cleanlinessRating" type="Cleanliness" value={ratings.cleanliness} />
       </span>
-      <span className='ratingTriple ratingsRight'>
+      <span className="ratingTriple ratingsRight">
         <Rating key="locationRating" type="Location" value={ratings.location} />
         <Rating key="checkInRating" type="Check-in" value={ratings.checkIn} />
         <Rating key="valueRating" type="Value" value={ratings.value} />
