@@ -48,15 +48,17 @@ class Review extends React.Component {
     }
 
     return (
-      <div className='review' >
-        <div className='userInfo'>
-          <img src={this.props.review.user_photo} alt={this.props.review.user_name}></img>
-          <div>
-            <b className='name'>{this.props.review.user_name}</b>
-            <div className='date'>{moment(this.props.review.review_date).format('MMMM YYYY')}</div>
+      <div>
+        <div className='review' >
+          <div className='userInfo'>
+            <img src={this.props.review.user_photo} alt={this.props.review.user_name}></img>
+            <div>
+              <b className='name'>{this.props.review.user_name}</b>
+              <div className='date'>{moment(this.props.review.review_date).format('MMMM YYYY')}</div>
+            </div>
           </div>
+          {reviewText}
         </div>
-        {reviewText}
         <hr></hr>
       </div>
     );
