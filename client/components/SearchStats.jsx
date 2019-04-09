@@ -9,8 +9,8 @@ function SearchStats (props) {
 
   return (
     <div className="searchStats">
-      <h4>{props.reviews.length} guests have mentioned "{props.searchTerm}"</h4>
-      <h4 onClick={handleClick}>Back to all reviews</h4>
+      <p>{props.reviews.length} guests have mentioned "{props.searchTerm}"</p>
+      <p className="backToReviews" onClick={handleClick}>Back to all reviews</p>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.searchStats{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+.searchStats p{
+  font-size: 14px;
+}
+
+.backToReviews{
+  color: #008489;
+}
+
+.backToReviews:hover{
+  text-decoration: underline;
+}
