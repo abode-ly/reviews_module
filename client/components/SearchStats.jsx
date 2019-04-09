@@ -1,14 +1,18 @@
 import React from 'react';
+import sharedStyles from './Component.module.css';
+import styles from './SearchStats.module.css';
 
 function SearchStats (props) {
+  const { reviews, searchTerm } = props;
+
   const handleClick = () => {
     props.filterSearch('');
   };
 
   return (
-    <div>
-      <h4>{props.reviews.length} guests have mentioned "{props.searchTerm}"</h4>
-      <h4 onClick={handleClick}>Back to all reviews</h4>
+    <div className="searchStats">
+      <p>{reviews.length} guests have mentioned "{searchTerm}"</p>
+      <p className="backToReviews" onClick={handleClick}>Back to all reviews</p>
     </div>
   );
 }

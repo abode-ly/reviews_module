@@ -2,10 +2,10 @@
   font-size: 14px;
   line-height: 20.02px;
   fill: #484848;
-  letter-spacing: normal;
   display: flex;
-  /* justify-content: space-between;
-  flex-flow: row; */
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
 }
 
 .reviewTitle {

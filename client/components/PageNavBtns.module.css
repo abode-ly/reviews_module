@@ -1,0 +1,70 @@
+.PageNavBtns{
+  line-height: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.PageNavBtns .fas{
+  font-size: 20px;
+  color:#008489;
+  border-radius: 50%;
+  border: 2px solid;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+nav.pagination{
+  display: inline-flex;
+}
+
+.paginationBtn {
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  border: none;
+  color:#008489;
+  height: 30px;
+  width: 30px;
+  padding: 0px 10px;
+  margin: 8px;
+  display: inline-flex; 
+  align-items: center;
+}
+
+.elipseBtn {
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  margin: 8px;
+  display: inline-flex; 
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  justify-content: center;
+}
+
+.paginationBtn:hover {
+  text-decoration: underline;
+}
+
+.paginationBtn:focus {
+  background:#008489;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+  .paginationBtn{
+    display: none;
+  }
+  .elipseBtn{
+    display: none;
+  }
+}

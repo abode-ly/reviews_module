@@ -3,7 +3,7 @@
   letter-spacing: normal;
   text-align: start;
   width: 588px;
-  /* height: 155px; */
+  padding: 25px 0px;
 }
 
 .userInfo {
@@ -11,6 +11,7 @@
   flex-direction: row;
   align-items: center;
   color: #484848;
+  margin-bottom: 15px;
 }
 
 img {
@@ -40,4 +41,14 @@ img {
 a{
   color: #008489;
   display: inline;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .review {
+    width: 85%;
+  }
 }

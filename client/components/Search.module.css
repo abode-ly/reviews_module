@@ -5,6 +5,8 @@
   width: 205px;
   height: 56px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .searchBar {
@@ -18,14 +20,14 @@
 
 .fa-search {
   position: absolute;
-  top: 8px;
+  top: 20px;
   left: 7px;
   font-size: 16px;
 }
 
 .fa-times {
   position: absolute;
-  top: 8px;
-  left: 210px;
+  top: 20px;
+  left: 180px;
   font-size: 16px;
 }

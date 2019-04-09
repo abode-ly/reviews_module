@@ -5,6 +5,7 @@ import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
+import PageNavBtns from './PageNavBtns.jsx';
 import sharedStyles from './Component.module.css';
 
 class App extends React.Component {
@@ -24,18 +25,24 @@ class App extends React.Component {
         accuracy: 0,
       },
       searchTerm: '',
+      pageNum: 1,
+      reviewsPerPage: 7,
+      maxPage: 1,
     };
     this.calculateAvg = this.calculateAvg.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
+    this.newPage = this.newPage.bind(this);
   }
 
   componentDidMount() {
-    axios.get('/abodes/6/reviews')
+    const { reviewsPerPage } = this.state;
+    axios.get('/abodes/98/reviews')
       .then((listingInfo) => {
         this.setState({
           allReviews: listingInfo.data.reviews,
           reviews: listingInfo.data.reviews,
           foundAverage: false,
+          maxPage: Math.ceil(listingInfo.data.reviews.length / reviewsPerPage),
         });
       })
       .catch(() => {
@@ -52,32 +59,42 @@ class App extends React.Component {
   }
   
   filterSearch(searchTerm, reviews) {
-    reviews = reviews || this.state.allReviews;
+    const { allReviews, reviewsPerPage } = this.state;
+    reviews = reviews || allReviews;
     this.setState({
       reviews,
       searchTerm,
+      maxPage: Math.ceil(reviews.length / reviewsPerPage),
+      pageNum: 1,
+    });
+  }
+
+  newPage(pageNum) {
+    this.setState({
+      pageNum,
     });
   }
 
   render() {
+    const { searchTerm, reviews, allReviews, ratings, foundAverage, avgRating, pageNum, reviewsPerPage, maxPage } = this.state;
     let underSearch;
-    if (this.state.searchTerm !== '') {
-      underSearch = <SearchStats reviews={this.state.reviews} searchTerm={this.state.searchTerm} filterSearch={this.filterSearch} />
+    if (searchTerm !== '') {
+      underSearch = <SearchStats reviews={reviews} searchTerm={searchTerm} filterSearch={this.filterSearch} />;
     } else {
-      underSearch = <Ratings ratings={this.state.ratings} foundAverage={this.state.foundAverage} reviews={this.state.reviews} calculateAvg={this.calculateAvg} />
+      underSearch = <Ratings ratings={ratings} foundAverage={foundAverage} reviews={reviews} calculateAvg={this.calculateAvg} />;
     }
 
     return (
       <div>
-        {/* <div className='divider'></div> */}
-        <div>
-          <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
-          <Search reviews={this.state.allReviews} filterSearch={this.filterSearch} />
+        <div className="totalAndSearch">
+          <TotalReviews stars={avgRating} reviews={allReviews} />
+          <Search reviews={allReviews} filterSearch={this.filterSearch} />
         </div>
-        <hr></hr>
-       {underSearch}
-       <hr></hr>
-        <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
+        <hr />
+        { underSearch }
+        <hr />
+        <Reviews searchTerm={searchTerm} reviews={reviews} pageNum={pageNum} reviewsPerPage={reviewsPerPage} />
+        <PageNavBtns newPageFn={this.newPage} newPage={this.newPage} pageNum={pageNum} maxPage={maxPage} />
       </div>
     );
   }
