@@ -55,7 +55,12 @@ nav.pagination{
   text-decoration: underline;
 }
 
-.paginationBtn:focus {
+/* .paginationBtn:focus {
+  background:#008489;
+  color: #ffffff;
+} */
+
+.selected{
   background:#008489;
   color: #ffffff;
 }
