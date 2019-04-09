@@ -1,0 +1,31 @@
+.search {
+  fill: #484848;
+  line-height: 20.02px;
+  font-size: 14px;
+  width: 205px;
+  height: 56px;
+  position: relative;
+}
+
+.searchBar {
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: normal;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+}
+
+.fa-search {
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  font-size: 16px;
+}
+
+.fa-times {
+  position: absolute;
+  top: 8px;
+  left: 210px;
+  font-size: 16px;
+}

@@ -1,0 +1,8 @@
+#reviews {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
+}
+
+hr{
+  fill: #484848;
+}

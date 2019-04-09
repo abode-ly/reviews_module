@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './Search.module.css';
+import sharedStyles from './Component.module.css';
 
 class Search extends React.Component {
   constructor(props) {
@@ -14,9 +16,6 @@ class Search extends React.Component {
     const fitsFilter = this.props.reviews.filter((review) => {
       return review.review_text.includes(searchTerm);
     });
-    // this.setState({
-    //   searchTerm: '',
-    // });
     this.props.filterSearch(searchTerm, fitsFilter);
   }
 
@@ -26,10 +25,23 @@ class Search extends React.Component {
     });
   }
 
+  clear() {
+    this.setState({
+      searchTerm: '',
+    });
+    this.props.filterSearch('');
+  }
+
   render() {
+    let x;
+    if(this.state.searchTerm !== '') {
+      x = <i className="fas fa-times" onClick={()=>{this.clear()}}></i>;
+    }
     return (
-      <form onSubmit={(e) => { this.search(e); }}>
-        <input type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}}></input>
+      <form onSubmit={(e) => { this.search(e);}} className='search' >
+        <i className="fas fa-search"></i>
+        <input className='searchBar' type='text' placeholder="Search reviews" onChange={(e)=>{this.input(e)}} value={this.state.searchTerm}></input>
+        {x}
       </form>
     );
   }

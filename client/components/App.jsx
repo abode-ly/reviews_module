@@ -5,6 +5,7 @@ import Search from './Search.jsx';
 import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
+import sharedStyles from './Component.module.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/abodes/2/reviews')
+    axios.get('/abodes/6/reviews')
       .then((listingInfo) => {
         this.setState({
           allReviews: listingInfo.data.reviews,
@@ -50,11 +51,11 @@ class App extends React.Component {
     });
   }
   
-  filterSearch(searchTerm, filtReviews) {
-    filtReviews = filtReviews || this.state.allReviews;
+  filterSearch(searchTerm, reviews) {
+    reviews = reviews || this.state.allReviews;
     this.setState({
-      reviews: filtReviews,
-      searchTerm: searchTerm,
+      reviews,
+      searchTerm,
     });
   }
 
@@ -68,10 +69,15 @@ class App extends React.Component {
 
     return (
       <div>
-        <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews}/>
-        <Search reviews={this.state.reviews} filterSearch={this.filterSearch} />
+        {/* <div className='divider'></div> */}
+        <div>
+          <TotalReviews stars={this.state.avgRating} reviews={this.state.reviews} />
+          <Search reviews={this.state.allReviews} filterSearch={this.filterSearch} />
+        </div>
+        <hr></hr>
        {underSearch}
-        <Reviews reviews={this.state.reviews} />
+       <hr></hr>
+        <Reviews searchTerm={this.state.searchTerm} reviews={this.state.reviews} />
       </div>
     );
   }
