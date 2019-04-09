@@ -2,7 +2,6 @@
   line-height: 10px;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   flex-direction: row;
 }
 
@@ -19,12 +18,10 @@
 }
 
 nav.pagination{
-  /* background: red; */
   display: inline-flex;
 }
 
 .paginationBtn {
-  /* background: blue; */
   font-size: 16px;
   text-align: center;
   line-height: 32px;
@@ -40,6 +37,21 @@ nav.pagination{
   align-items: center;
 }
 
+.elipseBtn {
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  height: 30px;
+  width: 30px;
+  padding: 0px 10px;
+  margin: 8px;
+  display: inline-flex; 
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+}
+
 .paginationBtn:hover {
   text-decoration: underline;
 }
@@ -51,6 +63,9 @@ nav.pagination{
 
 @media screen and (max-width: 600px) {
   .paginationBtn{
+    display: none;
+  }
+  .elipseBtn{
     display: none;
   }
 }

@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/abodes/6/reviews')
+    axios.get('/abodes/98/reviews')
       .then((listingInfo) => {
         let reviewsPerPage = this.state.reviewsPerPage;
         this.setState({

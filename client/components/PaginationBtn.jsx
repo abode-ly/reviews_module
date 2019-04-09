@@ -10,7 +10,7 @@ function PaginationBtn (props) {
 
   let pageButton;
   if (pageNum === '...') {
-    pageButton = <button type="button" className='paginationBtn' >{pageNum}</button>;
+    pageButton = <p className='elipseBtn' >{pageNum}</p>;
   } else {
     pageButton = <button type="button" className='paginationBtn' id={pageNum} onClick={(e)=>{clickHandler(e.target.id)}}>{pageNum}</button>;
   }

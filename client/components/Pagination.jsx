@@ -17,8 +17,8 @@ function Pagination (props) {
     pageNumbers.unshift('...');
     pageNumbers.unshift(1);
   };
-
-  if (maxPage < 4) {
+  
+  if (maxPage <= 5) {
     for (let page = 1; page <= maxPage; page++) {
       pageNumbers.push(page);
     }
@@ -49,7 +49,6 @@ function Pagination (props) {
     appendMinPage();
     appendMaxPage();
   }
-  console.log(pageNumbers);
   return (
     <nav className="pagination">
       {pageNumbers.map((page) => {
