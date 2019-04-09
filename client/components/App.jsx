@@ -6,7 +6,7 @@ import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
 import PageNavBtns from './PageNavBtns.jsx';
-import sharedStyles from './Component.module.css';
+import styles from './Component.module.css';
 
 class App extends React.Component {
   constructor(props) {

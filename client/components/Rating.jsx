@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Ratings.module.css';
-import sharedStyles from './Component.module.css';
 import stars from './Stars.module.css';
 
 function Rating(props) {

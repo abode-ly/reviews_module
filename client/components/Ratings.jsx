@@ -1,7 +1,6 @@
 import React from 'react';
 import Rating from './Rating.jsx';
 import styles from './Ratings.module.css';
-import sharedStyles from './Component.module.css';
 
 function Ratings(props) {
   const { foundAverage, reviews, calculateAvg, ratings } = props;

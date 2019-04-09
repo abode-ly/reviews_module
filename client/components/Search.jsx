@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Search.module.css';
-import sharedStyles from './Component.module.css';
 
 class Search extends React.Component {
   constructor(props) {

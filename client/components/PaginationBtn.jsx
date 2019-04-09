@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './PageNavBtns.module.css';
-import sharedStyles from './Component.module.css';
 
 function PaginationBtn (props) {
   const { pageNum, newPageFn } = props;

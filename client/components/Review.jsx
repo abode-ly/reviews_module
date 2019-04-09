@@ -2,7 +2,6 @@ import React from 'react';
 import DOMPurify from 'dompurify';
 import moment from 'moment';
 import styles from './Review.module.css';
-import sharedStyles from './Component.module.css';
 
 class Review extends React.Component {
   constructor(props) {

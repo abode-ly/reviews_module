@@ -1,7 +1,6 @@
 import React from 'react';
 import PaginationBtn from './PaginationBtn';
 import styles from './PageNavBtns.module.css';
-import sharedStyles from './Component.module.css';
 
 
 function Pagination (props) {

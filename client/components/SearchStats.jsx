@@ -1,5 +1,4 @@
 import React from 'react';
-import sharedStyles from './Component.module.css';
 import styles from './SearchStats.module.css';
 
 function SearchStats (props) {

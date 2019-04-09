@@ -1,7 +1,6 @@
 import React from 'react';
 import Pagination from './Pagination.jsx';
 import styles from './PageNavBtns.module.css';
-import sharedStyles from './Component.module.css';
 
 function BackForthBtn (props) {
   const { newPageFn, maxPage, pageNum, newPage } = props;
