@@ -21,7 +21,7 @@ class Review extends React.Component {
     const { expanded } = this.state;
     let reviewText;
     if (expanded === true) {
-      reviewText = review.review_text.split('\n').map( (paragraph, index) => {
+      reviewText = review.review_text.split('\n').map((paragraph, index) => {
         return <p className={styles.reviewParagraph} key={index.toString()} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />;
       });
     } else if (expanded === false) {
@@ -34,15 +34,10 @@ class Review extends React.Component {
       } else if (reviewWordsArr.length <= 35) {
         reviewText = first50WordsStr.split('\n').map((paragraph, index) => <p key={index.toString()} className="reviewParagraph" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />);
       } else {
-        const paragraphs = first50WordsStr.concat('...').split('\n').map((paragraph, index) => {
-          return (
-            <p key={index.toString()} className={styles.reviewParagraph} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />
-          );
-        });
         reviewText = (
           <span>
-            {paragraphs}
-            <a onClick={() => { this.setState({expanded: true}) }}>Read more</a>
+            <p className={styles.reviewParagraph} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(first50WordsStr+'...')) }} />
+            <a className={styles.readMore} onClick={() => { this.setState({expanded: true}) }}>Read more</a>
           </span>
         );
       }
@@ -53,14 +48,14 @@ class Review extends React.Component {
         <div className={styles.review}>
           <div className={styles.userInfo}>
             <img src={review.user_photo} alt={review.user_name} />
-            <div>
+            <div className={styles.userTextInfo}>
               <b className={styles.name}>{review.user_name}</b>
-              <div className={styles.date}>{moment(review.review_date).format('MMMM YYYY')}</div>
+              <div>{moment(review.review_date).format('MMMM YYYY')}</div>
             </div>
           </div>
           {reviewText}
         </div>
-        <hr className={styles.line}/>
+        <hr className={styles.line} />
       </div>
     );
   }

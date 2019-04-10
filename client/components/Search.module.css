@@ -1,34 +1,38 @@
 .search {
-  fill: #484848;
-  line-height: 20.02px;
-  font-size: 14px;
-  width: 205px;
-  height: 56px;
+  /* font-size: larger; */
+  width: 50%;
   position: relative;
-  display: flex;
+  display: inline-flex;
+  /* direction: row; */
+  /* justify-content: center; */
   align-items: center;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: red;
 }
 
 .searchBar {
-  line-height: 24px;
-  font-size: 16px;
-  letter-spacing: normal;
-  padding-left: 30px;
-  padding-right: 30px;
+  font-size: larger;
+  padding-left: 2em;
+  padding-right: 1em;
   width: 100%;
 }
 
 .searchIcon {
   position: absolute;
-  top: 20px;
-  left: 7px;
-  font-size: 16px;
+  font-size: larger;
+  padding: .5em;
 }
 
 .x {
   position: absolute;
   top: 18px;
-  left: 180px;
-  font-size: 16px;
+  left: 95%;
+  top: 20%;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    width: 100%;
+  }
 }
