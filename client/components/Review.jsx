@@ -60,7 +60,7 @@ class Review extends React.Component {
           </div>
           {reviewText}
         </div>
-        <hr />
+        <hr className={styles.line}/>
       </div>
     );
   }

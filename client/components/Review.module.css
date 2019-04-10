@@ -48,6 +48,10 @@ a:hover{
   text-decoration: underline;
 }
 
+.line{
+  width: 600px;
+}
+
 @media only screen and (max-width: 600px) {
   .review {
     width: 85%;

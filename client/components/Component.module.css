@@ -1,18 +1,13 @@
-#reviews {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  display: flex;
-}
-/* Delete ^ */
-
 .line{
   fill: #484848;
+  width: 600px;
 }
 
 .totalAndSearch{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 500px;
+  width: 700px;
 }
 
 @media only screen and (max-width: 600px) {
