@@ -1,9 +1,8 @@
 .review {
-  line-height: 20.02px;
   letter-spacing: normal;
   text-align: start;
-  width: 588px;
-  padding: 25px 0px;
+  width: 100%;
+  padding: 1.5em 0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -11,45 +10,45 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #484848;
-  margin-bottom: 15px;
+  margin-bottom: .5em;
+}
+
+.userTextInfo {
+  height: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  font-size: 90%
 }
 
 img {
-  height: 48px;
-  width: 48px;
+  height: 3em;
   border-radius: 50%;
-  padding: 0px 20px 0px 0px;
 }
 
 .name {
-  font-size: 16px;
-  line-height: 22px;
   font-weight: 600;
-  font: Arial;
-}
-
-.date {
-  font-size: 14px;
 }
 
 .reviewParagraph {
-  font-size: 16px;
   color: #484848;
   display: inline;
+  line-height: 125%;
+  font: 90%;
 }
 
-a{
+.readMore{
   color: #008489;
   display: inline;
 }
 
-a:hover{
+.readMore:hover{
   text-decoration: underline;
 }
 
 .line{
-  width: 600px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,17 +1,17 @@
 .searchStats{
   display: inline-flex;
   justify-content: space-between;
-  width: 700px;
+  width: 100%;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.searchStats p{
-  font-size: 14px;
-  margin: 0px;
+.numHaveMentioned{
+  margin: 0;
 }
 
 .backToReviews{
   color: #008489;
+  margin: 0;
 }
 
 .backToReviews:hover{

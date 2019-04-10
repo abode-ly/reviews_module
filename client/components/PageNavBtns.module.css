@@ -1,20 +1,19 @@
 .PageNavBtns{
-  line-height: 10px;
   display: flex;
   align-items: center;
 }
 
 .rightLeftBtn{
-  font-size: 20px;
+  font-size: 1.5em;
   color:#008489;
   border-radius: 50%;
-  border: 2px solid;
-  width: 30px;
-  height: 30px;
+  border: .1em solid;
+  width: 1.2em;
+  height: 1.2em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
+  margin: .25em;
 }
 
 .pagination{
@@ -22,33 +21,30 @@
 }
 
 .paginationBtn {
-  font-size: 16px;
+  display: inline-flex; 
   text-align: center;
-  line-height: 32px;
+  align-items: center;
+  justify-content: center;
+  font-size: 100%;
   border-radius: 50%;
   border: none;
   color:#008489;
-  height: 30px;
-  width: 30px;
-  padding: 0px 10px;
-  margin: 8px;
-  display: inline-flex; 
-  align-items: center;
+  height: 2em;
+  width: 2em;
+  margin: .5em;
 }
 
 .elipseBtn {
-  font-size: 16px;
-  text-align: center;
-  line-height: 32px;
-  height: 30px;
-  width: 30px;
-  padding: 0px;
-  margin: 8px;
   display: inline-flex; 
   align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  height: 2em;
+  width: 2em;
+  padding: 0p;
+  margin: .5em;
   border-radius: 50%;
   border: none;
-  justify-content: center;
 }
 
 .paginationBtn:hover {
