@@ -1,23 +1,26 @@
 .totalReviews {
-  font-size: 14px;
-  line-height: 20.02px;
+  font-size: larger;
   fill: #484848;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 40%;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+@media only screen and (max-width: 745px) {
+  .totalReviews {
+    width: 100%;
+  }
+}
+
 .reviewTitle {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: larger;
   fill: #484848;
 }
 
 .stars {
   font-size: 24px;
-  line-height: 25.74px;
   fill: #484848;
   position: relative;
   display: inline-block;

@@ -1,16 +1,30 @@
+.reviewsContainer{
+  font-size: medium;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 .line{
   fill: #484848;
-  width: 600px;
+  width: 100%;
 }
 
 .totalAndSearch{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 700px;
+  width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1125px) {
+  .reviewsContainer{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 745px) {
   .totalAndSearch {
     display: flex;
     flex-direction: column;

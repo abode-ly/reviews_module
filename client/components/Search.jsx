@@ -45,10 +45,10 @@ class Search extends React.Component {
     }
     return (
       <form onSubmit={(e) => { this.search(e); }} className={styles.search}>
+        <input className={styles.searchBar} type="text" placeholder="Search reviews" onChange={(e) => { this.input(e); }} value={searchTerm} />
         <div className={styles.searchIcon}>
           <i className="fas fa-search" />
         </div>
-        <input className={styles.searchBar} type="text" placeholder="Search reviews" onChange={(e) => { this.input(e); }} value={searchTerm} />
         {x}
       </form>
     );

@@ -85,7 +85,7 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className={styles.reviewsContainer}>
         <div className={styles.totalAndSearch}>
           <TotalReviews stars={avgRating} reviews={allReviews} />
           <Search reviews={allReviews} filterSearch={this.filterSearch} />
