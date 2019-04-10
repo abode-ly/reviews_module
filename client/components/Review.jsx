@@ -47,7 +47,7 @@ class Review extends React.Component {
       <div>
         <div className={styles.review}>
           <div className={styles.userInfo}>
-            <img src={review.user_photo} alt={review.user_name} />
+            <img className={styles.avatar} src={review.user_photo} alt={review.user_name} />
             <div className={styles.userTextInfo}>
               <b className={styles.name}>{review.user_name}</b>
               <div>{moment(review.review_date).format('MMMM YYYY')}</div>
