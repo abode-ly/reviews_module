@@ -2,6 +2,7 @@
   display: inline-flex;
   justify-content: space-between;
   width: 90%;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .searchStats p{

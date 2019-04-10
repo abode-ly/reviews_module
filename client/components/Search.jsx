@@ -37,12 +37,18 @@ class Search extends React.Component {
     const { searchTerm } = this.state;
     let x;
     if (searchTerm !== '') {
-      x = <i className="fas fa-times" onClick={()=>{this.clear()}} />;
+      x = (
+        <div className={styles.x}>
+          <i className="fas fa-times" onClick={()=>{this.clear()}} />
+        </div>
+      );
     }
     return (
-      <form onSubmit={(e) => { this.search(e); }} className="search">
-        <i className="fas fa-search" />
-        <input className="searchBar" type="text" placeholder="Search reviews" onChange={(e)=>{this.input(e)}} value={this.state.searchTerm} />
+      <form onSubmit={(e) => { this.search(e); }} className={styles.search}>
+        <div className={styles.searchIcon}>
+          <i className="fas fa-search" />
+        </div>
+        <input className={styles.searchBar} type="text" placeholder="Search reviews" onChange={(e) => { this.input(e); }} value={searchTerm} />
         {x}
       </form>
     );

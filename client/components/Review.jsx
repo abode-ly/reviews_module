@@ -22,7 +22,7 @@ class Review extends React.Component {
     let reviewText;
     if (expanded === true) {
       reviewText = review.review_text.split('\n').map( (paragraph, index) => {
-        return <p className="reviewParagraph" key={index.toString()} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />;
+        return <p className={styles.reviewParagraph} key={index.toString()} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />;
       });
     } else if (expanded === false) {
       const reviewWordsArr = review.review_text.split(' ');
@@ -30,13 +30,13 @@ class Review extends React.Component {
       const first50WordsStr = first50WordsArr.join(' ');
       
       if (reviewWordsArr.length <= 35 && !first50WordsStr.includes('\n')) {
-        reviewText = <p className="reviewParagraph" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(first50WordsStr)) }} />;
+        reviewText = <p className={styles.reviewParagraph} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(first50WordsStr)) }} />;
       } else if (reviewWordsArr.length <= 35) {
         reviewText = first50WordsStr.split('\n').map((paragraph, index) => <p key={index.toString()} className="reviewParagraph" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />);
       } else {
         const paragraphs = first50WordsStr.concat('...').split('\n').map((paragraph, index) => {
           return (
-            <p key={index.toString()} className="reviewParagraph" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />
+            <p key={index.toString()} className={styles.reviewParagraph} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.replaceWithBold(paragraph)) }} />
           );
         });
         reviewText = (
@@ -50,12 +50,12 @@ class Review extends React.Component {
 
     return (
       <div>
-        <div className="review">
-          <div className="userInfo">
+        <div className={styles.review}>
+          <div className={styles.userInfo}>
             <img src={review.user_photo} alt={review.user_name} />
             <div>
-              <b className="name">{review.user_name}</b>
-              <div className="date">{moment(review.review_date).format('MMMM YYYY')}</div>
+              <b className={styles.name}>{review.user_name}</b>
+              <div className={styles.date}>{moment(review.review_date).format('MMMM YYYY')}</div>
             </div>
           </div>
           {reviewText}

@@ -19,16 +19,16 @@
   width: 100%;
 }
 
-.fa-search {
+.searchIcon {
   position: absolute;
   top: 20px;
   left: 7px;
   font-size: 16px;
 }
 
-.fa-times {
+.x {
   position: absolute;
-  top: 20px;
+  top: 18px;
   left: 180px;
   font-size: 16px;
 }

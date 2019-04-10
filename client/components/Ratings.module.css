@@ -1,6 +1,6 @@
 .ratingsContainer{
   display: flex;
-  width: 95%;
+  width: 600px;
   flex-wrap: row wrap;
   flex-direction: row;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
