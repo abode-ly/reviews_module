@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 250px;
+  width: 50%;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .stars {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 25.74px;
   fill: #484848;
   position: relative;

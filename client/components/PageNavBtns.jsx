@@ -14,16 +14,24 @@ function BackForthBtn (props) {
 
   let leftBtn = '';
   if (pageNum !== 1) {
-    leftBtn = <button type="button" className="fas fa-arrow-left" id="leftBtn" onClick={(e) => { changePage(e.target.id); }} />;
+    leftBtn = (
+      <div className={styles.rightLeftBtn}>
+        <span type="button" className="fas fa-arrow-left"  id="leftBtn" onClick={(e) => { changePage(e.target.id); }} />
+      </div>
+    );
   }
 
   let rightBtn = '';
   if (Number(pageNum) !== maxPage) {
-    rightBtn = <button type="button" className="fas fa-arrow-right" id="rightBtn" onClick={(e) => { changePage(e.target.id); }} />;
+    rightBtn = (
+      <div className={styles.rightLeftBtn}>
+        <span type="button" className="fas fa-arrow-right" id="rightBtn" onClick={(e) => { changePage(e.target.id); }} />
+      </div>
+    );
   }
 
   return (
-    <div className="PageNavBtns">
+    <div className={styles.PageNavBtns}>
       {leftBtn}
       <Pagination newPageFn={newPageFn} maxPage={maxPage} pageNum={Number(pageNum)} />
       {rightBtn}
