@@ -1,7 +1,6 @@
 import React from 'react';
 import Rating from './Rating.jsx';
 import styles from './Ratings.module.css';
-import sharedStyles from './Component.module.css';
 
 function Ratings(props) {
   const { foundAverage, reviews, calculateAvg, ratings } = props;
@@ -38,13 +37,13 @@ function Ratings(props) {
   }
 
   return (
-    <div className="ratingsContainer">
-      <span className="ratingTriple ratingsLeft">
+    <div className={styles.ratingsContainer}>
+      <span className={`${styles.ratingTriple} ${styles.ratingsLeft}`}>
         <Rating key="accuracyRating" type="Accuracy" value={ratings.accuracy} />
         <Rating key="communicationRating" type="Communication" value={ratings.communication} />
         <Rating key="cleanlinessRating" type="Cleanliness" value={ratings.cleanliness} />
       </span>
-      <span className="ratingTriple ratingsRight">
+      <span className={`${styles.ratingTriple} ${styles.ratingsRight}`}>
         <Rating key="locationRating" type="Location" value={ratings.location} />
         <Rating key="checkInRating" type="Check-in" value={ratings.checkIn} />
         <Rating key="valueRating" type="Value" value={ratings.value} />

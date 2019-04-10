@@ -6,7 +6,7 @@ import Ratings from './Ratings.jsx';
 import SearchStats from './SearchStats.jsx';
 import Reviews from './Reviews.jsx';
 import PageNavBtns from './PageNavBtns.jsx';
-import sharedStyles from './Component.module.css';
+import styles from './Component.module.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -86,13 +86,13 @@ class App extends React.Component {
 
     return (
       <div>
-        <div className="totalAndSearch">
+        <div className={styles.totalAndSearch}>
           <TotalReviews stars={avgRating} reviews={allReviews} />
           <Search reviews={allReviews} filterSearch={this.filterSearch} />
         </div>
-        <hr />
+        <hr className={styles.line} />
         { underSearch }
-        <hr />
+        <hr className={styles.line} />
         <Reviews searchTerm={searchTerm} reviews={reviews} pageNum={pageNum} reviewsPerPage={reviewsPerPage} />
         <PageNavBtns newPageFn={this.newPage} newPage={this.newPage} pageNum={pageNum} maxPage={maxPage} />
       </div>

@@ -1,10 +1,9 @@
 import React from 'react';
 import PaginationBtn from './PaginationBtn';
 import styles from './PageNavBtns.module.css';
-import sharedStyles from './Component.module.css';
 
 
-function Pagination (props) {
+function Pagination(props) {
   const { maxPage, newPageFn, pageNum } = props;
   const pageNumbers = [];
 
@@ -50,9 +49,9 @@ function Pagination (props) {
     appendMaxPage();
   }
   return (
-    <nav className="pagination">
+    <nav className={styles.pagination}>
       {pageNumbers.map((page) => {
-        return <PaginationBtn pageNum={page} newPageFn={newPageFn} key={page} />
+        return <PaginationBtn pageNum={page} newPageFn={newPageFn} key={page} />;
       })}
     </nav>
   );

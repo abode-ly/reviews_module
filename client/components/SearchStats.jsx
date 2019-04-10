@@ -1,5 +1,4 @@
 import React from 'react';
-import sharedStyles from './Component.module.css';
 import styles from './SearchStats.module.css';
 
 function SearchStats (props) {
@@ -10,9 +9,9 @@ function SearchStats (props) {
   };
 
   return (
-    <div className="searchStats">
+    <div className={styles.searchStats}>
       <p>{reviews.length} guests have mentioned "{searchTerm}"</p>
-      <p className="backToReviews" onClick={handleClick}>Back to all reviews</p>
+      <p className={styles.backToReviews} onClick={handleClick}>Back to all reviews</p>
     </div>
   );
 }
