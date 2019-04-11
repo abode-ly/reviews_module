@@ -36,7 +36,12 @@ class App extends React.Component {
 
   componentDidMount() {
     const { reviewsPerPage } = this.state;
-    axios.get('/abodes/12/reviews')
+    const pathNum = Number(window.location.pathname.split('/')[1]);
+    let requestedAbode = Math.ceil(Math.random() * 100);
+    if (pathNum > 0 && pathNum < 101) {
+      requestedAbode = pathNum;
+    }
+    axios.get(`/abodes/${requestedAbode}/reviews`)
       .then((listingInfo) => {
         this.setState({
           allReviews: listingInfo.data.reviews,

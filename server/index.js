@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const { Review } = require('./db.js');
 
 const app = express();
@@ -14,6 +15,10 @@ app.get('/abodes/:abode_id/reviews', (req, res) => {
       res.send(abodeInfo);
     }
   });
+});
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.listen(port, () => { console.log(`Listening on port ${port}`); });
