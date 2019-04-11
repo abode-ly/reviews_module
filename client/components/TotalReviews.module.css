@@ -4,8 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
+  width: 60%;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-left: .5em;
+  padding-right: 1em;
 }
 
 @media only screen and (max-width: 745px) {
