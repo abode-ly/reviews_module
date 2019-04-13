@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
 const { Review } = require('./db.js');
+const compression = require('compression');
 
 const app = express();
 const port = 3002;
 
+app.use(compression());
 app.use(express.static('public'));
 
 app.get('/abodes/:abode_id/reviews', (req, res) => {

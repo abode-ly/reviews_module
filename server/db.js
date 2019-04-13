@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://172.17.0.2/abodely', { useNewUrlParser: true, useCreateIndex: true });
 // localhost
+// 172.17.0.2
 
 const oneReviewSchema = new mongoose.Schema({
   user_name: { type: String, unique: true },
