@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/abodely', { useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect('mongodb://172.17.0.2/abodely', { useNewUrlParser: true, useCreateIndex: true });
+// localhost
 
 const oneReviewSchema = new mongoose.Schema({
   user_name: { type: String, unique: true },
@@ -23,3 +24,4 @@ const reviewSchema = new mongoose.Schema({
 const Review = mongoose.model('Review', reviewSchema);
 
 module.exports.Review = Review;
+module.exports.connection = connection;

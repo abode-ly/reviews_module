@@ -10,6 +10,8 @@ const reviewText = () => {
   return reviewParagraphsArr.join('\n');
 };
 
+
+
 const generateReviews = () => {
   const numOfReviews = Math.floor(Math.random() * 45);
   const reviews = [];
@@ -55,6 +57,18 @@ const generateListings = () => {
   }
 };
 
-generateListings();
+if (Review.collection) {
+  Review.db.dropCollection('reviews', (err) => {
+    if (err) {
+      console.log('failed to drop existing collection from MongoDB, ', err);
+    } else {
+      console.log('successfully removed collection and now reseeding');
+      generateListings();
+    }
+  });
+} else {
+  console.log('seeding data for the first time');
+  generateListings();
+}
 
 module.exports.generateListings = generateListings;
