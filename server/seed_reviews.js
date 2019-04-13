@@ -10,8 +10,6 @@ const reviewText = () => {
   return reviewParagraphsArr.join('\n');
 };
 
-
-
 const generateReviews = () => {
   const numOfReviews = Math.floor(Math.random() * 45);
   const reviews = [];
