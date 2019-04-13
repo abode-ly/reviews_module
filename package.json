@@ -10,7 +10,7 @@
     "build": "webpack",
     "start": "nodemon ./server/index.js",
     "seed": "node ./server/seed_reviews.js",
-    "execute": "webpack ; node ./server/seed_reviews.js ; node ./server/index.js"
+    "execute": "node ./server/seed_reviews.js ; node ./server/index.js"
   },
   "engines": {
     "node": "^11.12.0"
