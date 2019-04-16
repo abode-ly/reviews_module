@@ -27,12 +27,12 @@ describe('App component rendering', () => {
   });
 });
 
-// describe('App: componentDidMount', () => {
-//   const wrapper = shallow(<App />);
-//   it('componentDidMount should be only called once', () => {
-//     let componentDidMountSpy = spyOn(App.prototype, 'componentDidMount');
-//     expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
-//   });
+describe('App: componentDidMount', () => {
+  const wrapper = shallow(<App />);
+  it('componentDidMount should be only called once', () => {
+    let componentDidMountSpy = spyOn(App.prototype, 'componentDidMount');
+    expect(componentDidMountSpy).toHaveBeenCalledTimes(1);
+  });
 
 //   it('state should be populated after componentDidMount runs', () => {
 //     expect(wrapper.state('reviews').length).not.toEqual(4);
@@ -68,4 +68,4 @@ describe('App component rendering', () => {
   //   const data = await wrapper.state('reviews').length;
   //   expect(data).not.toEqual(0);
   // });
-// });
+});

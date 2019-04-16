@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import TotalReviews from './TotalReviews.jsx';
+import { doesNotReject } from 'assert';
 
 const data = [{
   _id: '5ac45234b',
